@@ -1,0 +1,59 @@
+<style>
+    .responsive-table {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    
+    .responsive-th {
+        border: 1px solid #000;
+        color: white;
+        font-weight: 700;
+        background-color: #00664F;
+        flex-grow: 1;
+        flex-basis: 0;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .responsive-tbody {
+        width: 100%;
+        margin: 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-bottom: 2px solid #000;
+        border-top: 2px solid #000;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+    }
+
+    .responsive-tr {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-basis: 0;
+        justify-content: center;
+    }
+
+    .responsive-td {
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        flex-grow: 1;
+        text-align: center;
+        flex-wrap: wrap;
+        padding: 5px;
+    }
+</style>
+
+<div class="responsive-table">
+    <div class="responsive-tbody">
+        {% for data in page.heading-data-pair %}
+            <div class="responsive-tr">
+                <span class="responsive-th">{{ data.heading }}</span>
+                {% for cell in data.cell %}
+                    <span class="responsive-td">{{ cell }}</span>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

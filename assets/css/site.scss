@@ -1,0 +1,79 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 600;
+  src: url(/assets/fonts/Lato-Semibold.ttf);
+}
+
+
+$primary: #00664F;
+$secondary: #215E4A;
+$accent: #009976;
+$background: #F8EDE3;
+$neutral: #FFFFFF;
+
+* {
+    font-family: 'Lato', sans-serif;
+    font-size: 24;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+} 
+
+body {
+    background-color: $background;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+button {
+    
+}
+
+hr {
+    margin: 1rem 0;
+    border: 1px solid #00664F;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 1rem 5vw;
+}
+
+h1, h2 {
+    color: $primary;
+    margin-top: 0px;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: $primary;
+    font-weight: 700;
+    transition: color 0.25s;
+}
+a:hover {
+    color: $accent;
+}
+
+/* if external link, append arrow symbol */
+/* so people would expect to be led out of the site and not be so surprised */
+a[href^="http"]::after {
+    content: " ↗";
+}
+
+p, ul, ol {
+    margin-top: 0px
+}

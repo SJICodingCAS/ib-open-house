@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+    <title>{{ site.title }} | {{ page.title }}</title>
+    <style>
+        .default-banner-container {
+            position: relative;
+            min-height: 35vh;
+            width: 100vw;
+            overflow: hidden;
+            background-color: #00664F;
+
+        }
+
+        .default-banner-image {
+            position: absolute;
+            width: 102%;
+            height: 102%;
+            transform: translate(-1%, -1%);
+            filter: blur(2px) brightness(90%);
+            opacity: 0.8;
+            object-fit: cover;
+            /* z-index: 1 */
+        }
+
+        .default-banner-title {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #FFFFFF;
+            /* z-index: 2 */
+        }
+    </style>
+</head>
+
+<body>
+    {% include navbar.html %}
+    
+    <div class="default-banner-container"> 
+        <img src="{{ page.banner-image-url | relative_url }}" class="default-banner-image">
+        <div class="default-banner-title">{{ page.title }}</div>
+    </div>
+
+    <div class="content">
+        {{ content }}
+    </div>
+    {% include footer.html %}
+</body>

@@ -1,0 +1,101 @@
+---
+layout: default
+permalink: /cas-strand
+---
+<style>
+    .CAS-specific-table {
+        border: 1px solid #000;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .CAS-specific-table-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .CAS-specific-table-head {
+        border: 1px solid #000;
+        padding: 0.4em;
+        text-align: center;
+        background-color: #00664F;
+        color: white;
+        font-weight: 700;
+        flex-grow: 1;
+        align-items: center;
+        width: 100%;
+    }
+
+    .CAS-specific {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .CAS-description {
+        flex: 1 1 45%
+    }   
+
+    .img-cas-strand {
+        flex-basis: 45%;
+        flex-grow: 1;
+        max-width: 50%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .img-cas-strand {
+            flex-grow: 1;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+</style>
+
+<body>
+    {% if page.cas-strand == "Creativity" %}
+        {% assign data = site.data.creativity %}
+    {% endif %}
+    {% if page.cas-strand == "Activity" %}
+        {% assign data = site.data.activity %}
+    {% endif %}
+    {% if page.cas-strand == "Service" %}
+        {% assign data = site.data.service %}
+    {% endif %}
+    <h1>Table of Content</h1>
+    <div class="CAS-specific-table">
+        <div class="CAS-specific-table-head">{{ page.cas-strand }}</div>
+        <div class="CAS-specific-table-row">
+            {% for row in data %}
+                <a href="#{{row['Index']}}">{{ row["Name"] }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% for row in data %}
+        <h1  id="{{row['Index']}}">{{ row["Name"] }}</h1>
+        {% include components/img-by-text.html
+            header="",
+            description=row["Description"],
+            img_url=row['Photo']
+        %}
+        <!--<div class="CAS-specific">
+            <p class="CAS-description">{{ row["Description"] }}</p>
+            <img class="img-cas-strand" src="{{row['Photo']}}">
+        </div> -->
+        <hr>
+    {% endfor %}
+</body>
+</html>

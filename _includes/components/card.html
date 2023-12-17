@@ -1,0 +1,107 @@
+<style>
+    /* trickery to center all divs */
+    .card {
+        position: relative;
+        border-radius: 10px;
+        background-color: #00664F;
+        overflow: hidden
+    }
+
+    .card-image {
+        opacity: 0.8;
+        /* filter: brightness(90%);*/ 
+    }
+
+    .card-text-container {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    /* decorate the image */
+    .card-image {
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    /* change cursor on hover */
+    .card:hover {
+        cursor: pointer;
+    }
+
+    /* make sure image covers entirety of card */
+    .card-image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .card-image {
+        width: 103%;
+        height: 103%;
+        transform: translate(-2%, -2%);
+    }
+
+    /* blur image when card is hovered over */
+    .card-image {
+        transition: filter 0.5s,
+                    -webkit-filter 0.5s;
+    }
+    .card:hover .card-image {
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+    }
+
+    
+    /* formatting for text */
+    .title {
+        font-size: 4vw;
+        color: white;
+        font-weight: bold;
+    }
+    .description {
+        font-size: 0.9rem;
+        color: white;
+    }
+
+    /* if screen width is too small (mobile), the width is the entire screen (minus the margin of course) */
+    @media only screen and (max-width: 800px) {
+        .card {
+            width: 85vw !important; /* !important is unfortunately necessary */
+        }
+        .title {
+            font-size: 8vw;
+        }
+        .description {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<!-- entire thing is inside an <a /> since <a /> == link -->
+<a href="{{ include.link_url }}">
+
+    <!-- Width and height are inlined here cos each card may have its own individual width and height -->
+    <!-- width can be overrided if the screen width is too small, see above -->
+    <div class="card" style="width: {{include.width}}; height: {{include.height}}">
+
+        <div class="card-image-container">
+            <img src="{{ include.image_url | relative_url }}" class="card-image" >
+        </div>
+
+        <div class="card-text-container">
+            <span class="title">{{ include.title }}</span>
+
+            <!-- if no description, no <p /> since it adds extra spacing below the title -->
+            {% if include.description != "" %}
+            <p class="description">{{ include.description }}</p>
+            {% endif %}
+        </div>
+    </div>
+</a>

@@ -1,0 +1,46 @@
+<style>
+    .footer {
+        background-color: #00664F;
+        padding: 1.8em 0 1.8em 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        flex-grow: 1;
+    }
+
+    .footer span, .footer a {
+        color: white;
+        text-align: center;
+    }
+
+    .footer-line {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+
+    @media only screen and (min-width: 435px) {
+        .footer-line span:nth-child(1) {
+             border-right: #FFFFFF 1px solid;
+             padding-right: 0.5em;
+        }
+        .footer-line span:nth-child(2) {
+             padding-left: 0.5em;
+        }
+    }
+</style>
+
+<div class="footer">
+    <div class="footer-line">
+        <span><b>St Joseph’s Institution</b></span>
+        <span>38 Malcolm Road, Singapore 308274</span>
+    </div>
+    <div class="footer-line">
+        <span>Made with code and love by Coding & Technology CAS</span>
+        <span><a href="/credits/">Credits</a></span>
+    </div>
+</div>

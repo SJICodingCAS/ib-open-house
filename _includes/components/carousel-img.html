@@ -1,0 +1,44 @@
+<style>
+  .carousel-container {
+    display:flex;
+    flex-direction: row;
+  }
+
+  .arrow-container {
+    display:flex;
+    padding: 15vw;
+  }
+
+  .carousel-image-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .carousel-image {
+  }
+
+
+
+</style>
+  
+<div class="carousel-container">
+
+  <div class="arrow-container">
+    <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 4L4 37L24 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>  
+
+  <div class="carousel-image-container">
+    <img src="{{ '/assets/images/sji_logo.png' | relative_url }}" class="carousel-image" >
+    <img src="{{ '/assets/images/sji_logo.png' | relative_url }}" class="carousel-image" >
+    <img src="{{ '/assets/images/sji_logo.png' | relative_url }}" class="carousel-image" >
+  </div>
+
+  <div class="arrow-container">
+    <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 4L24 37L4 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+</div>

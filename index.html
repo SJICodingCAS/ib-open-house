@@ -1,0 +1,64 @@
+---
+layout: default
+banner-image-url: /assets/images/test.png
+---
+
+<style>
+  .banner-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-image: url(/assets/images/sji_logo.png); */
+  }
+
+  .text-container {
+      align-items: center;
+  }
+
+  .flex-container {
+    display: flex;
+    gap: 1vw;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+  }
+</style>
+
+<div class="flex-container">
+  {% include components/carousel-info.html 
+    info_text ="WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP"
+    info_title="AHAHSDHASDHSAHHHHHH SJI"
+    %}
+</div>
+
+
+<div id="cards" class="flex-container">
+  {%
+    include components/card.html
+    image_url="/assets/images/test.png"
+    link_url="/virtual-tour"
+    title="Campus"
+    description=""
+    width="25vw"
+    height="30vw"
+  %}
+  {%
+    include components/card.html
+    image_url="/assets/images/test.png"
+    link_url="/subjects"
+    title="IBDP"
+    description=""
+    width="25vw"
+    height="30vw"
+  %}
+  {%
+    include components/card.html
+    image_url="/assets/images/test.png"
+    link_url="/whysji"
+    title="#whySJI"
+    description=""
+    width="25vw"
+    height="30vw"
+  %}
+</div>

@@ -1,0 +1,51 @@
+<style>
+    .img-by-text-container {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .img-img-by-text {
+        width: 49%;
+        height: auto;
+        flex: 1;
+        max-width: 49%;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+
+    .img-by-text-container-text {
+        flex: 1;
+        max-width: 49%;
+    }
+
+    @media only screen and (min-width: 750px) {
+        .img-first {
+            flex-direction: row-reverse;
+        }    
+    }
+    @media only screen and (max-width: 749px) {
+        .img-by-text-container {
+            flex-direction: column;
+        }
+        .img-by-text-container-text,.img-img-by-text {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }    
+    }
+</style>
+{% if include.img_first %}
+<div class="img-by-text-container img-first">
+{% else %}
+<div class="img-by-text-container">
+{% endif %}
+    <div class="img-by-text-container-text">
+        {% if include.header != "" %}<h2>{{include.header}}</h2>{% endif %}
+        <p>{{include.description}}</p>
+    </div>
+    <img src="{{include.img_url}}" class="img-img-by-text">
+</div>

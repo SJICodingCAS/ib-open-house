@@ -1,0 +1,81 @@
+<style>
+  .carousel-container {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arrow-container {
+    display:flex;
+    padding: 0;
+  }
+
+  .carousel-info-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35vw;
+    height: 35vw;
+    margin: 5vw;
+  }
+  .info-title {
+    text-align: left;
+    font-weight: 800;
+  }
+  .info-text {
+    text-wrap: wrap;
+    text-align: left;
+  }
+
+  .carousel-card-container {
+    display: flex;
+    width: 25vw;
+    height: 35vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00664F;
+    overflow: hidden;
+  }
+  .card-image {
+    object-fit: cover;
+  }
+  .card-subtitle {
+    
+  }
+
+</style>
+  
+<div class="carousel-container">
+
+  <div class="arrow-container">
+    <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 4L4 37L24 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>  
+
+  <div class="carousel-info-container">
+    <div class="info-title">
+      {{include.info_title}}
+    </div>
+    <div class="info-text">
+      {{include.info_text}}
+    </div>
+  </div>
+
+  <div class="carousel-card-container">
+
+    <img src="{{ '/assets/images/test.png' | relative_url }}" class="card-image">
+
+    <div class="card-subtitle">
+      SUBTITLE SUBTITLE SUBTITLE
+    </div>
+  </div>
+
+  <div class="arrow-container">
+    <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 4L24 37L4 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+</div>
