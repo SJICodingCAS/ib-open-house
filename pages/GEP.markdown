@@ -2,7 +2,7 @@
 layout: default
 permalink: /GEP/
 title: Global Education Programme
-banner-image-url: /assets/images/test.png
+banner-image-url: ../assets/images/Banners/gep.png
 ---
 <style>
     .GEP-column-container {
@@ -26,9 +26,8 @@ banner-image-url: /assets/images/test.png
         padding-right: 0.25rem;
     }
 
-    .img-GEP {
-        max-width: 33%;
-        width: auto;
+    .gep-image {
+        max-width: 100%;
         height: auto;
         object-fit: contain;
     }
@@ -36,7 +35,7 @@ banner-image-url: /assets/images/test.png
     @media only screen and (max-width: 500px) {
         .GEP-column-container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-evenly;
             gap: 7px;  
             flex-wrap: wrap;
@@ -69,17 +68,17 @@ In addition, the GEP leverages on the innovative programmes and dynamic learning
 
 <div class="GEP-column-container">
     <div class="GEP-column-item">
-        <img src="#">
+        <img src="../assets/images/GEP/international-trips.png" class="gep-image">
         <h2>International Trips</h2>
         <p>Our end-of-year trips allow our Year 5 students to travel to various countries in the region and learn more about their cultures as well engage themselves in various unique and fulfilling experiences</p>
     </div>
     <div class="GEP-column-item" id="GEP-column-item-middle">
-        <img src="#">
+        <img src="../assets/images/GEP/cura.png"  class="gep-image">
         <h2>CURA</h2>
         <p>Organised by our school, CURA is an online international exchange program focused on the United Nations Sustainable Development Goals. Students from schools across the globe come together to share unique and interesting ideas to target current and future issues which the world may face</p>
     </div>
     <div class="GEP-column-item">
-        <img src="#">
+        <img src="../assets/images/GEP/exchange-programs.jpg" class="gep-image">
         <h2>Exchange Programme</h2>
         <p>SJI regularly hosts exchange programmes with students from across the globe, such as from Japan, Israel, Kazakhstan and many more countries, which allow our students to interact and gain unique perspectives from peers around the world and hence increasing their global awareness</p>
     </div>

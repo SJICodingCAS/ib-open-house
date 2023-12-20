@@ -2,7 +2,7 @@
 layout: default
 permalink: /whysji/
 title: "#whySJI"
-banner-image-url: /assets/images/test.png
+banner-image-url: ../assets/images/Banners/why-sji.png
 ---
 
 

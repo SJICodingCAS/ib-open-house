@@ -1,6 +1,6 @@
 ---
 title: Creativity, Activity, Service
-banner-image-url: /assets/images/test.png
+banner-image-url: ../assets/images/Banners/cas-index.png
 layout: default
 permalink: /CAS/
 heading-data-pair:
