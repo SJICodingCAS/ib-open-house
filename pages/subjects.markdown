@@ -2,7 +2,7 @@
 layout: default
 permalink: /subjects/
 title: Subjects
-banner-image-url: /assets/images/test.png
+banner-image-url: /assets/images/Banners/subjects.png
 ---
 
 <style>
@@ -15,16 +15,31 @@ banner-image-url: /assets/images/test.png
     }
 
     .img-img-by-text {
-        width: auto;
+        width: 48%;
         height: auto;
         flex: 1;
-        max-width: 50%;
         object-fit: contain;
+        border-radius: 10px;
     }
 
     .img-by-text-container-text {
         flex: 1;
-        max-width: 50%;
+        max-width: 48%;
+    }
+
+    @media only screen and (min-width: 750px) {
+        .img-first {
+            flex-direction: row-reverse;
+        }    
+    }
+    @media only screen and (max-width: 1200px) {
+        .img-by-text-container {
+            flex-direction: column;
+        }
+        .img-by-text-container-text,.img-img-by-text {
+            max-width: 100%;
+            height: auto;
+        }    
     }
 
     .flex-container {
@@ -54,8 +69,8 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 
 <div id="vision-mission-motto" class="flex-container">
   {% include components/card.html
-    image_url="/assets/images/test.png"
-    link_url="/"
+    image_url="/assets/images/Subjects/grp-1.png"
+    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 1"
     description="Studies in Language & Literature"
     always_show_description=true
@@ -63,8 +78,8 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/test.png"
-    link_url="/"
+    image_url="/assets/images/Subjects/grp-2.png"
+    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 2"
     description="Language Acquisition"
     always_show_description=true
@@ -72,8 +87,8 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/test.png"
-    link_url="/"
+    image_url="/assets/images/Subjects/grp-3.png"
+    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 3"
     description="Individuals & Societies"
     always_show_description=true
@@ -81,8 +96,8 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/test.png"
-    link_url="/"
+    image_url="/assets/images/Subjects/grp-4.png"
+    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 4"
     description="Experimental Science"
     always_show_description=true
@@ -90,8 +105,8 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/test.png"
-    link_url="/"
+    image_url="/assets/images/Subjects/grp-5.png"
+    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 5"
     description="Mathematics"
     always_show_description=true
@@ -99,8 +114,8 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/test.png"
-    link_url="/"
+    image_url="/assets/images/Subjects/grp-6.png"
+    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 6"
     description="The Arts"
     always_show_description=true
@@ -115,9 +130,9 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 
 <div class="img-by-text-container">
     <div class="img-by-text-container-text">
-        <p>The Theory of Knowledge (TOK) course develops in the students an interdisciplinary and coherent approach to learning that unifies the academic areas, and at the same time encourages appreciation of other cultural perspectives.<br>TOK encourages critical thinking about knowledge itself and aims to help young people make sense of what they encounter. It makes students aware of the nature of knowledge and personal biases and offers the chance for them to reflect and recognise the role of knowledge and apply it with greater awareness and credibility.<br>For the IB Diploma assessment, students are to complete an essay and create an exhibition of three objects with accompanying commentaries to explore how TOK manifests in the world.For more information, visit: https://www.ibo.org/programmes/diploma-programme/curriculum/theory-of-knowledge/ </p>
-        <img src="#" class="img-img-by-text">
+        <p>The Theory of Knowledge (TOK) course develops in the students an interdisciplinary and coherent approach to learning that unifies the academic areas, and at the same time encourages appreciation of other cultural perspectives.<br>TOK encourages critical thinking about knowledge itself and aims to help young people make sense of what they encounter. It makes students aware of the nature of knowledge and personal biases and offers the chance for them to reflect and recognise the role of knowledge and apply it with greater awareness and credibility.<br>For the IB Diploma assessment, students are to complete an essay and create an exhibition of three objects with accompanying commentaries to explore how TOK manifests in the world.For more information, visit: <a href="https://www.ibo.org/programmes/diploma-programme/curriculum/theory-of-knowledge/">IB TOK</a> </p>
     </div>
+    <img src="/assets/images/Subjects/tok.png" class="img-img-by-text">
 </div>
 
 ---
@@ -130,8 +145,8 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
         Through continual process reflection, students are able to demonstrate the rationale for decisions made and the skills and understandings developed, as well as the authenticity and intellectual initiative of their voice.<br>
         The learning involved in researching and writing the extended essay is closely aligned with the development of many of the characteristics described in the IB learner profile. Students are to a large extent, responsible for their own independent learning, through which they acquire and communicate in-depth knowledge and understanding.<br>
         The research process necessarily involves intellectual risk-taking and extensive reflection; open-mindedness, balance and fairness are key prerequisites for a good extended essay. </p>
-        <img src="#" class="img-img-by-text">
     </div>
+    <img src="/assets/images/Subjects/ee.png" class="img-img-by-text">
 </div>
 
 ---

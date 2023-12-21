@@ -51,6 +51,7 @@ permalink: /cas-strand
         width: auto;
         height: auto;
         object-fit: contain;
+        border-radius: 10px;
     }
 
     @media only screen and (max-width: 1000px) {
@@ -60,6 +61,7 @@ permalink: /cas-strand
             width: auto;
             height: auto;
             object-fit: contain;
+            border-radius: 10px;
         }
     }
 </style>
@@ -86,15 +88,10 @@ permalink: /cas-strand
 
     {% for row in data %}
         <h1  id="{{row['Index']}}">{{ row["Name"] }}</h1>
-        {% include components/img-by-text.html
-            header="",
-            description=row["Description"],
-            img_url=row['Photo']
-        %}
-        <!--<div class="CAS-specific">
+        <div class="CAS-specific">
             <p class="CAS-description">{{ row["Description"] }}</p>
             <img class="img-cas-strand" src="{{row['Photo']}}">
-        </div> -->
+        </div>
         <hr>
     {% endfor %}
 </body>

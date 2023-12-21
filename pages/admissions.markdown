@@ -2,7 +2,7 @@
 layout: default
 permalink: /admissions/
 title: Admissions
-banner-image-url: /assets/images/test.png
+banner-image-url: ../assets/images/Banners/admissions.png
 heading-data-pair:
     - heading: "Year"
       cell: 
