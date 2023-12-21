@@ -2,22 +2,40 @@
   .carousel-container {
     display:flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1vh;
+  }
+
+  .carousel-img-container {
+    display:flex;
+    height: 30vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+  }
+  
+  .carousel-img {
+    height: 30vh;
+    width: 20vw;
+    object-fit: cover;
+    margin: 0.5vw;
   }
 
   .arrow-container {
     display:flex;
-    padding: 15vw;
+    padding: 0;
+    margin: 5vw;
+    transition: filter 0.5s;
   }
 
-  .carousel-image-container {
-    display: flex;
-    flex-direction: row;
+  .arrow-container:hover {
+    display:flex;
+    padding: 0;
+    margin: 5vw;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 5px black);
   }
-
-  .carousel-image {
-  }
-
-
 
 </style>
   
@@ -29,10 +47,12 @@
     </svg>
   </div>  
 
-  <div class="carousel-image-container">
-    <img src="{{ '/assets/images/sji_logo.png' | relative_url }}" class="carousel-image" >
-    <img src="{{ '/assets/images/sji_logo.png' | relative_url }}" class="carousel-image" >
-    <img src="{{ '/assets/images/sji_logo.png' | relative_url }}" class="carousel-image" >
+  <div class="carousel-img-container">
+    {% for i in page.carousel-img %}
+    <div>
+      <img src="{{ i | relative_url }}" class="carousel-img">
+    </div>
+    {% endfor %}
   </div>
 
   <div class="arrow-container">
@@ -42,3 +62,6 @@
   </div>
 
 </div>
+
+<script>
+</script>

@@ -53,10 +53,14 @@ hr {
     padding: 1rem 5vw;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
     color: $primary;
     margin-top: 0px;
     margin-bottom: 0.5rem;
+}
+
+h4 {
+    size: 1.25rem;
 }
 
 a {
@@ -70,10 +74,17 @@ a:hover {
 
 /* if external link, append arrow symbol */
 /* so people would expect to be led out of the site and not be so surprised */
-a[href^="http"]::after {
+a.external::after {
     content: " ↗";
 }
 
 p, ul, ol {
     margin-top: 0px
+}
+
+.video-placeholder {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 10px;
 }

@@ -95,11 +95,11 @@ authorities in your current school.
 ---
 # Returning Singaporeans
 Returning Singaporeans who would like to gain admission into SJI are to approach the Ministry of Education to register 
-for the <a href="https://www.moe.gov.sg/returning-singaporeans/post-secondary">SPERS-JC/MI</a>. The advantage of registering 
+for the <a class="external" href="https://www.moe.gov.sg/returning-singaporeans/post-secondary">SPERS-JC/MI</a>. The advantage of registering 
 for the MOE SPERS-JC/MI is that the results could be used to gain admission into the best available Junior College in order 
 of merit that has a vacancy without the need for further testing by the school.
 
 ---
 # International students
 International students who wish to gain admission MUST approach the 
-<a href="https://www.moe.gov.sg/international-students">Ministry of Education</a>, Singapore for advice.
+<a class="external" href="https://www.moe.gov.sg/international-students">Ministry of Education</a>, Singapore for advice.
