@@ -6,11 +6,43 @@
         padding: 1% 4% 1% 4%;
     }
 
-    .nav-container {
+    .nav-container-desktop {
         display: flex;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
+    }
+
+    .nav-container-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 1300px) {
+        .nav-container-desktop {
+            display: none;
+        }
+
+        .navbar {
+            position: fixed;
+            z-index: 100;
+        }
+    }
+
+    @media screen and (min-width: 1300px) {
+        .nav-container-mobile {
+            display: none;
+            transition: opacity 1s ease-out;
+            opacity: 0;
+        }
+    }
+
+    .nav-icon {
+        height: 60px;
+        color: #FFFFFF;
     }
 
     .nav-logo {
@@ -28,8 +60,43 @@
         text-decoration: none;
         /* All Caps */
         text-transform: uppercase;
-        
     }
+
+    .nav-contents-mobile > .nav-element {
+        flex-grow: 0;
+        border-bottom: solid #FFFFFF;
+        padding: 5%;
+    }
+
+    .nav-contents-mobile {
+        position: fixed;
+        height: 100vh;
+        width: 50vw;
+        margin-left: 50vw;
+        background-color: #00664F;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        display: none;
+        z-index: 100;
+
+        /* Animation for coming out from right */
+        transition: opacity 1s ease-out;
+        -webkit-animation: slide-left .3s ease-out;
+        -moz-animation: slide-left .3s ease-out;
+
+    }
+
+    @-webkit-keyframes slide-left {
+      0% { opacity: 0; -webkit-transform: translateX(100%); }   
+      100% { opacity: 1; -webkit-transform: translateX(0); }
+    }
+
+    @-moz-keyframes slide-left {
+        0% { opacity: 0; -moz-transform: translateX(100%); }   
+        100% { opacity: 1; -moz-transform: translateX(0); }
+    }
+
     .nav-element:hover {
         color: white;
         text-decoration: underline;
@@ -38,7 +105,7 @@
 </style>
 
 <div class="navbar">
-    <div class="nav-container">
+    <div class="nav-container-desktop">
         <a href="/"> <img class="nav-logo" src="{{ '/assets/images/sji_logo.png' | relative_url }}"  alt="SJI Logo"> </a>
         <a class="nav-element" href="/virtual-tour/">Virtual Tour</a>
         <a class="nav-element" href="/whysji/">#WHYSJI</a>
@@ -49,4 +116,38 @@
         <a class="nav-element" href="/faith-formation/">Faith Formation</a>
         <a class="nav-element" href="/admissions/">Admissions</a>
     </div>
+    <div class="nav-container-mobile">
+        <a href="/"> <img class="nav-logo" src="{{ '/assets/images/sji_logo.png' | relative_url }}"  alt="SJI Logo"> </a>
+        <svg class="nav-icon" id="nav-menu-btn" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 18L20 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 12L20 12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 6L20 6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+    </div>
+
+
+    <div class="nav-contents-mobile">
+        <a class="nav-element" href="/virtual-tour/">Virtual Tour</a>
+        <a class="nav-element" href="/whysji/">#WHYSJI</a>
+        <a class="nav-element" href="/subjects/">Subjects</a>
+        <a class="nav-element" href="/CAS">CAS</a>
+        <a class="nav-element" href="/values-and-student-leadership/">Values & Student Leadership</a>
+        <a class="nav-element" href="/GEP/">GEP</a>
+        <a class="nav-element" href="/faith-formation/">Faith Formation</a>
+        <a class="nav-element" href="/admissions/">Admissions</a>
+    </div>
 </div>
+
+<script>
+let navToggled = false;
+
+document.getElementById("nav-menu-btn").onclick = () => {
+    navToggled = !navToggled;
+    if (navToggled) {
+        document.getElementsByClassName("nav-contents-mobile")[0].style.display = "flex";
+        document.getElementsByClassName("nav-contents-mobile")[0].style.opacity = 1;
+    } else  {
+        document.getElementsByClassName("nav-contents-mobile")[0].style.display = "none";
+    }
+}
+</script>
