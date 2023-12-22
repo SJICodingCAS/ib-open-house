@@ -1,6 +1,22 @@
 ---
 layout: default
 banner-image-url: /assets/images/test.png
+carousel_info_data:
+  intro:
+  - info_title: "Our History"
+    info_text: "Founded by De La Salle Brothers in 1852, St. Joseph's Institution (SJI) is an independent Catholic school, whose mission is to nurture students to learn how to learn and to learn how to live, so that they can be empowered to grow into men and women of integrity and men and women for others.
+
+    <br><br>St. John Baptist De La Salle, founder of the De La Salle schools, pioneered a progressive education system more than 300 years ago."
+    image_url: "/assets/images/landing_page/old-sji-campus.jpg"
+    subtitle: "Old SJI Campus at Bras Basah Road"
+  - info_title: "The SJI Difference: the Josephian"
+    info_text: "An SJI education aims to educate the whole person.  At SJI, we focus on nurturing our students to learn how to learn and to learn how to live, so that they can be empowered to grow into Men & Women of Integrity and Men & Women for Others."
+    image_url: "/assets/images/test.png"
+    subtitle: "Many opportunities for Josephians"
+  - info_title: "Faith. Service. Community"
+    info_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nunc quis neque interdum varius. Maecenas a urna sit amet libero cursus luctus nec in magna. Praesent vel massa non ligula feugiat venenatis. Phasellus neque tellus, luctus eget interdum nec, viverra in nulla. Vestibulum pharetra justo vel erat hendrerit congue. Praesent auctor porta malesuada. Cras a sodales libero, sed mollis augue."
+    image_url: "/assets/images/test.png"
+    subtitle: "Old SJI Campus at Bras Basah Road"
 ---
 
 <style>
@@ -25,13 +41,11 @@ banner-image-url: /assets/images/test.png
   }
 </style>
 
+<hr>
 <div class="flex-container">
-  {% include components/carousel-info.html 
-    info_text ="WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP WRITEUP"
-    info_title="AHAHSDHASDHSAHHHHHH SJI"
-    %}
+  {% include components/carousel-info.html id="intro" %}
 </div>
-
+<hr>
 
 <div id="cards" class="flex-container">
   {%

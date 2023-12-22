@@ -1,6 +1,8 @@
 ---
 layout: default
 permalink: /virtualtour/
+---
+
 # About SJI Campus
 SJI has a vibrant and spacious campus filled with greenery and conducive spaces for learning and just relaxing with your friends. Follow Ernest and Khushi as they take you on a tour around the SJI campus as you learn more about the various facilities around the school and take a glimpse at SJI’s campus
 

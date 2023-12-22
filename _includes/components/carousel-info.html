@@ -1,28 +1,54 @@
 <style>
-  .carousel-container {
+  .carousel-container, .carousel-changeable-inner {
     display:flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 1vh;
+  }
+
+  .carousel-changeable-outer {
+    position: relative;
+    width: 60vw;
+    height: 45vh;
+  }
+
+  .carousel-changeable-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 0.5s;
   }
 
   .arrow-container {
     display:flex;
     padding: 0;
+    margin: 5vw;
+    transition: filter 0.5s;
+  }
+
+  .arrow-container:hover {
+    display:flex;
+    padding: 0;
+    margin: 5vw;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 5px black);
   }
 
   .carousel-info-container {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    width: 35vw;
-    height: 35vw;
-    margin: 5vw;
+    width: 45vw;
+    height: 25vh;
   }
+
   .info-title {
     text-align: left;
     font-weight: 800;
+    position: relative;
   }
+
   .info-text {
     text-wrap: wrap;
     text-align: left;
@@ -30,52 +56,115 @@
 
   .carousel-card-container {
     display: flex;
-    width: 25vw;
-    height: 35vh;
+    width: 40vw;
+    height: 40vh;
     flex-direction: column;
     align-items: center;
     background-color: #00664F;
     overflow: hidden;
   }
-  .card-image {
+
+  .carousel-image {
     object-fit: cover;
+    width: 100%;
+    height: 90%;
+    margin-bottom: 0.7rem;
   }
-  .card-subtitle {
-    
+
+  .carousel-subtitle {
+    color: white;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    line-height: 0px;
+    font-size: 0.8rem;
   }
 
 </style>
-  
-<div class="carousel-container">
 
-  <div class="arrow-container">
+<div class="carousel-container" id="{{ include.id }}">
+
+  <div class="arrow-container left-arrow">
     <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M24 4L4 37L24 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </div>  
+  
+  <div class="carousel-changeable-outer">
+    {% for entry in page.carousel_info_data[include.id] %}
+    <div class="carousel-changeable-inner">
+      <div class="carousel-info-container">
+        <div class="info-title">
+          <span class="carousel-changeable-text">{{entry.info_title}}<span>
+        </div>
+        <div class="info-text">
+          <span class="carousel-changeable-text">{{entry.info_text}}</span>
+        </div>
+      </div>
 
-  <div class="carousel-info-container">
-    <div class="info-title">
-      {{include.info_title}}
+      <div class="carousel-card-container">
+        <img src="{{ entry.image_url || '/assets/images/test.png' | relative_url }}" class="carousel-image">
+        <div class="carousel-subtitle">
+          <p>{{entry.subtitle}}</p>
+        </div>
+      </div>
     </div>
-    <div class="info-text">
-      {{include.info_text}}
-    </div>
+    {% endfor %}
   </div>
 
-  <div class="carousel-card-container">
-
-    <img src="{{ '/assets/images/test.png' | relative_url }}" class="card-image">
-
-    <div class="card-subtitle">
-      SUBTITLE SUBTITLE SUBTITLE
-    </div>
-  </div>
-
-  <div class="arrow-container">
+  <div class="arrow-container right-arrow">
     <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M4 4L24 37L4 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </div>
 
 </div>
+
+
+<script>
+  (() => {
+    // run on load
+    let innerWrappers = Array.from(document.querySelectorAll("#{{ include.id }} .carousel-changeable-inner"));
+    for ([i, innerWrapper] of innerWrappers.entries()) {
+      if (i == 0) continue;
+      innerWrapper.style.opacity = 0;
+      innerWrapper.style.zIndex = -1;
+    }
+
+    // attribute "shown" stores the index of the currently shown entry
+    let outerWrapper = document.querySelector("#{{ include.id }} .carousel-changeable-outer");
+    outerWrapper.setAttribute("shown", "0");
+    
+    // when right arrow is clicked, move to next entry
+    let rightArrow = document.querySelector("#{{ include.id }} .right-arrow");
+    rightArrow.addEventListener("click", () => {
+      let shown = parseInt(outerWrapper.getAttribute("shown"));
+      innerWrappers[shown].style.opacity = 0;
+      innerWrappers[shown].style.zIndex = -1;
+
+      shown++;
+      if (shown == innerWrappers.length) shown = 0;
+
+      innerWrappers[shown].style.opacity = 1;
+      innerWrappers[shown].style.zIndex = 0;
+
+      outerWrapper.setAttribute("shown", shown.toString());
+    });
+
+    // when left arrow is clicked, move to previous entry
+    let leftArrow = document.querySelector("#{{ include.id }} .left-arrow");
+    leftArrow.addEventListener("click", () => {
+      let shown = parseInt(outerWrapper.getAttribute("shown"));
+      innerWrappers[shown].style.opacity = 0;
+      innerWrappers[shown].style.zIndex = -1;
+
+      shown--;
+      if (shown == -1) shown = innerWrappers.length - 1;
+
+      innerWrappers[shown].style.opacity = 1;
+      innerWrappers[shown].style.zIndex = 0;
+
+      outerWrapper.setAttribute("shown", shown.toString());
+    });
+  })()
+</script>
