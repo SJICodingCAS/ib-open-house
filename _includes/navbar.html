@@ -35,6 +35,8 @@
     @media screen and (min-width: 1300px) {
         .nav-container-mobile {
             display: none;
+            transition: opacity 1s ease-out;
+            opacity: 0;
         }
     }
 
@@ -79,7 +81,20 @@
         z-index: 100;
 
         /* Animation for coming out from right */
-        transition: 2.2s cubic-bezier(.36,-0.01,0,.77);
+        transition: opacity 1s ease-out;
+        -webkit-animation: slide-left .3s ease-out;
+        -moz-animation: slide-left .3s ease-out;
+
+    }
+
+    @-webkit-keyframes slide-left {
+      0% { opacity: 0; -webkit-transform: translateX(100%); }   
+      100% { opacity: 1; -webkit-transform: translateX(0); }
+    }
+
+    @-moz-keyframes slide-left {
+        0% { opacity: 0; -moz-transform: translateX(100%); }   
+        100% { opacity: 1; -moz-transform: translateX(0); }
     }
 
     .nav-element:hover {
@@ -130,6 +145,7 @@ document.getElementById("nav-menu-btn").onclick = () => {
     navToggled = !navToggled;
     if (navToggled) {
         document.getElementsByClassName("nav-contents-mobile")[0].style.display = "flex";
+        document.getElementsByClassName("nav-contents-mobile")[0].style.opacity = 1;
     } else  {
         document.getElementsByClassName("nav-contents-mobile")[0].style.display = "none";
     }
