@@ -35,6 +35,7 @@ permalink: /cas-strand
     .CAS-specific {
         display: flex;
         flex-direction: row;
+        align-items: flex-start;
         justify-content: flex-start;
         flex-wrap: wrap;
         gap: 1rem;
@@ -64,6 +65,10 @@ permalink: /cas-strand
             border-radius: 10px;
         }
     }
+
+    .checkout-other-strands {
+        margin-top: 1rem;
+    }
 </style>
 
 <body>
@@ -85,6 +90,24 @@ permalink: /cas-strand
             {% endfor %}
         </div>
     </div>
+
+    {% if page.cas-strand == "Creativity" %}
+    <div class="checkout-other-strands">
+        Check out other CAS strands here: <a href='/cas/activity'>Activity</a> and <a href='/cas/service'>Service</a>
+    </div>
+    {% endif %}
+    {% if page.cas-strand == "Activity" %}
+    <div class="checkout-other-strands">
+        Check out other CAS strands here: <a href='/cas/creativity'>Creativity</a> and <a href='/cas/service'>Service</a>
+    </div>
+    {% endif %}
+    {% if page.cas-strand == "Service" %}
+    <div class="checkout-other-strands">
+        Check out other CAS strands here: <a href='/cas/creativity'>Creativity</a> and <a href='/cas/activity'>Activity</a>
+    </div>
+    {% endif %}
+
+    <hr>
 
     {% for row in data %}
         <h1  id="{{row['Index']}}">{{ row["Name"] }}</h1>

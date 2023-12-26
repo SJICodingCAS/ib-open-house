@@ -3,9 +3,8 @@ layout: default
 permalink: /whysji/
 title: "#whySJI"
 banner-image-url: ../assets/images/Banners/why-sji.png
-carousel-img: ["/assets/images/test.png", "/assets/images/test.png", "/assets/images/test.png"]
+carousel-img: ["../assets/images/whysji/carousel-1.png", "../assets/images/whysji/carousel-2.png", "../assets/images/whysji/carousel-3.png"]
 ---
-
 
 # Why should you choose SJI
 As you embark on the next journey of your life, deciding where to go next may be a difficult decision. Hear from a few of our Josephians and the unique memories and experiences which they’ve had here in SJI, which made them say #whySJI
@@ -18,4 +17,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="flex-container">
   {% include components/carousel-img.html %}
 </div>
+
 <hr>
+
+<div style="text-align: center;">
+  <p>Find more of our key moments <a href="https://www.flickr.com/photos/stjosephsinstitution/">here</a>.</p>
+</div>
