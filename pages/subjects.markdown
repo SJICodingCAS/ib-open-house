@@ -6,42 +6,6 @@ banner-image-url: /assets/images/Banners/subjects.png
 ---
 
 <style>
-    .img-by-text-container {
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-        margin-bottom: 15px;
-        flex-wrap: wrap;
-    }
-
-    .img-img-by-text {
-        width: 48%;
-        height: auto;
-        flex: 1;
-        object-fit: contain;
-        border-radius: 10px;
-    }
-
-    .img-by-text-container-text {
-        flex: 1;
-        max-width: 48%;
-    }
-
-    @media only screen and (min-width: 750px) {
-        .img-first {
-            flex-direction: row-reverse;
-        }    
-    }
-    @media only screen and (max-width: 1200px) {
-        .img-by-text-container {
-            flex-direction: column;
-        }
-        .img-by-text-container-text,.img-img-by-text {
-            max-width: 100%;
-            height: auto;
-        }    
-    }
-
     .flex-container {
         display: flex;
         gap: 1vw;
@@ -128,26 +92,21 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 
 # Theory of Knowledge
 
-<div class="img-by-text-container">
-    <div class="img-by-text-container-text">
-        <p>The Theory of Knowledge (TOK) course develops in the students an interdisciplinary and coherent approach to learning that unifies the academic areas, and at the same time encourages appreciation of other cultural perspectives.<br>TOK encourages critical thinking about knowledge itself and aims to help young people make sense of what they encounter. It makes students aware of the nature of knowledge and personal biases and offers the chance for them to reflect and recognise the role of knowledge and apply it with greater awareness and credibility.<br>For the IB Diploma assessment, students are to complete an essay and create an exhibition of three objects with accompanying commentaries to explore how TOK manifests in the world.For more information, visit: <a class="external" href="https://www.ibo.org/programmes/diploma-programme/curriculum/theory-of-knowledge/">IB TOK</a> </p>
-    </div>
-    <img src="/assets/images/Subjects/tok.png" class="img-img-by-text">
-</div>
+{% include components/img-by-text.html
+   header=""
+   description="The Theory of Knowledge (TOK) course develops in the students an interdisciplinary and coherent approach to learning that unifies the academic areas, and at the same time encourages appreciation of other cultural perspectives.<br><br>TOK encourages critical thinking about knowledge itself and aims to help young people make sense of what they encounter. It makes students aware of the nature of knowledge and personal biases and offers the chance for them to reflect and recognise the role of knowledge and apply it with greater awareness and credibility.<br>For the IB Diploma assessment, students are to complete an essay and create an exhibition of three objects with accompanying commentaries to explore how TOK manifests in the world.For more information, visit: [IB TOK](https://www.ibo.org/programmes/diploma-programme/curriculum/theory-of-knowledge/)"
+   img_url="/assets/images/Subjects/tok.png"
+%}
 
 ---
 
 # Extended Essay
 
-<div class="img-by-text-container">
-    <div class="img-by-text-container-text">
-        <p>The Extended Essay (EE) provides students with an opportunity to engage in personal research in a topic of their choice, under the guidance of a supervisor. The EE promotes high-level research and writing skills, intellectual discovery and creativity, and acquaints students with the independent research and writing skills expected at university. The EE journey culminates in a major piece of formally presented and structured writing (3500-4000 words), in which ideas and findings are communicated in a reasoned and coherent manner, appropriate to the subject chosen.<br>
-        Through continual process reflection, students are able to demonstrate the rationale for decisions made and the skills and understandings developed, as well as the authenticity and intellectual initiative of their voice.<br>
-        The learning involved in researching and writing the extended essay is closely aligned with the development of many of the characteristics described in the IB learner profile. Students are to a large extent, responsible for their own independent learning, through which they acquire and communicate in-depth knowledge and understanding.<br>
-        The research process necessarily involves intellectual risk-taking and extensive reflection; open-mindedness, balance and fairness are key prerequisites for a good extended essay. </p>
-    </div>
-    <img src="/assets/images/Subjects/ee.png" class="img-img-by-text">
-</div>
+{% include components/img-by-text.html
+   header=""
+   description="The Extended Essay (EE) provides students with an opportunity to engage in personal research in a topic of their choice, under the guidance of a supervisor. The EE promotes high-level research and writing skills, intellectual discovery and creativity, and acquaints students with the independent research and writing skills expected at university. The EE journey culminates in a major piece of formally presented and structured writing (3500-4000 words), in which ideas and findings are communicated in a reasoned and coherent manner, appropriate to the subject chosen.<br><br> Through continual process reflection, students are able to demonstrate the rationale for decisions made and the skills and understandings developed, as well as the authenticity and intellectual initiative of their voice.<br><br> The learning involved in researching and writing the extended essay is closely aligned with the development of many of the characteristics described in the IB learner profile. Students are to a large extent, responsible for their own independent learning, through which they acquire and communicate in-depth knowledge and understanding.<br><br> The research process necessarily involves intellectual risk-taking and extensive reflection; open-mindedness, balance and fairness are key prerequisites for a good extended essay."
+   img_url="/assets/images/Subjects/ee.png"
+%}
 
 ---
 
