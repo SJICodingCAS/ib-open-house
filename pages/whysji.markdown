@@ -2,8 +2,8 @@
 layout: default
 permalink: /whysji/
 title: "#whySJI"
-banner-image-url: ../assets/images/Banners/why-sji.png
-carousel-img: ["../assets/images/whysji/carousel-1.png", "../assets/images/whysji/carousel-2.png", "../assets/images/whysji/carousel-3.png"]
+banner-image-url: ../assets/images/Banners/why-sji.jpeg
+carousel-img: ["../assets/images/whysji/carousel-1.jpeg", "../assets/images/whysji/carousel-2.jpeg", "../assets/images/whysji/carousel-3.jpeg"]
 ---
 
 # Why should you choose SJI

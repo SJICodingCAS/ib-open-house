@@ -2,7 +2,7 @@
 layout: default
 permalink: /subjects/
 title: Subjects
-banner-image-url: /assets/images/Banners/subjects.png
+banner-image-url: /assets/images/Banners/subjects.jpeg
 ---
 
 <style>
@@ -33,7 +33,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 
 <div id="vision-mission-motto" class="flex-container">
   {% include components/card.html
-    image_url="/assets/images/Subjects/grp-1.png"
+    image_url="/assets/images/Subjects/grp-1.jpeg"
     link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 1"
     description="Studies in Language & Literature"
@@ -42,7 +42,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/Subjects/grp-2.png"
+    image_url="/assets/images/Subjects/grp-2.jpeg"
     link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 2"
     description="Language Acquisition"
@@ -51,7 +51,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/Subjects/grp-3.png"
+    image_url="/assets/images/Subjects/grp-3.jpeg"
     link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 3"
     description="Individuals & Societies"
@@ -60,7 +60,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/Subjects/grp-4.png"
+    image_url="/assets/images/Subjects/grp-4.jpeg"
     link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 4"
     description="Experimental Science"
@@ -69,7 +69,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/Subjects/grp-5.png"
+    image_url="/assets/images/Subjects/grp-5.jpeg"
     link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 5"
     description="Mathematics"
@@ -78,7 +78,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
     height="20vw"
   %}
   {% include components/card.html
-    image_url="/assets/images/Subjects/grp-6.png"
+    image_url="/assets/images/Subjects/grp-6.jpeg"
     link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
     title="Group 6"
     description="The Arts"
@@ -95,7 +95,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 {% include components/img-by-text.html
    header=""
    description="The Theory of Knowledge (TOK) course develops in the students an interdisciplinary and coherent approach to learning that unifies the academic areas, and at the same time encourages appreciation of other cultural perspectives.<br><br>TOK encourages critical thinking about knowledge itself and aims to help young people make sense of what they encounter. It makes students aware of the nature of knowledge and personal biases and offers the chance for them to reflect and recognise the role of knowledge and apply it with greater awareness and credibility.<br>For the IB Diploma assessment, students are to complete an essay and create an exhibition of three objects with accompanying commentaries to explore how TOK manifests in the world.For more information, visit: [IB TOK](https://www.ibo.org/programmes/diploma-programme/curriculum/theory-of-knowledge/)"
-   img_url="/assets/images/Subjects/tok.png"
+   img_url="/assets/images/Subjects/tok.jpeg"
 %}
 
 ---
@@ -105,7 +105,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 {% include components/img-by-text.html
    header=""
    description="The Extended Essay (EE) provides students with an opportunity to engage in personal research in a topic of their choice, under the guidance of a supervisor. The EE promotes high-level research and writing skills, intellectual discovery and creativity, and acquaints students with the independent research and writing skills expected at university. The EE journey culminates in a major piece of formally presented and structured writing (3500-4000 words), in which ideas and findings are communicated in a reasoned and coherent manner, appropriate to the subject chosen.<br><br> Through continual process reflection, students are able to demonstrate the rationale for decisions made and the skills and understandings developed, as well as the authenticity and intellectual initiative of their voice.<br><br> The learning involved in researching and writing the extended essay is closely aligned with the development of many of the characteristics described in the IB learner profile. Students are to a large extent, responsible for their own independent learning, through which they acquire and communicate in-depth knowledge and understanding.<br><br> The research process necessarily involves intellectual risk-taking and extensive reflection; open-mindedness, balance and fairness are key prerequisites for a good extended essay."
-   img_url="/assets/images/Subjects/ee.png"
+   img_url="/assets/images/Subjects/ee.jpeg"
 %}
 
 ---

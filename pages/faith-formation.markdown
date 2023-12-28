@@ -2,7 +2,7 @@
 layout: default
 permalink: /faith-formation/
 title: Faith Formation
-banner-image-url: ../assets/images/Banners/faith-formation.png
+banner-image-url: ../assets/images/Banners/faith-formation.jpeg
 ---
 
 # SJI Catholic Programme
@@ -25,7 +25,7 @@ Through fellowship in the context of a faith community, the Catholic student thr
 {% include components/img-by-text.html
     header="Faith"
     description="As a Catholic school of choice, students and staff experience God in their daily encounters at school. From our daily morning prayers held in our holy sanctuary, the Chapel, to our celebrated masses at the start of major school events such as Founder’s Day, these faith experiences nurture our hearts, minds and soul. There are also quiet, reflective experiences such as our retreats, and physical spaces like the labyrinth and the sitting water features, to allow for quiet time with God amidst the business of our lives."
-    img_url="../assets/images/Faith Formation/our-faith.png"
+    img_url="../assets/images/Faith Formation/our-faith.jpeg"
 %}
 {% include components/img-by-text.html
     header="Service"
@@ -36,6 +36,6 @@ Through fellowship in the context of a faith community, the Catholic student thr
 {% include components/img-by-text.html
     header="Community"
     description="Our Josephians grow in their faith journey through the Josephian Formation Journey. We celebrate their growth and mark their significant milestones through paraliturgies. Through song, prayer, scripture and reflective conversations, these activities allow them to take stock of what they have achieved, and to consider the possibilities that lie before them as Josephians."
-    img_url="../assets/images/Faith Formation/our-community.png"
+    img_url="../assets/images/Faith Formation/our-community.jpeg"
 %}
 </div>
