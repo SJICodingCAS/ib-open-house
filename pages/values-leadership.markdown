@@ -18,7 +18,7 @@ permalink: /values-and-student-leadership/
 {% include components/img-by-text.html
   header="Faith"
   description="Our schooling in SJI is a call from God, a vocation, to grow to our fullest potential in order to become men of integrity and men for others. We have faith in our ability as well as our peers’ ability to grow individually as persons to learn according to our natural ability and to act always with respect and responsibility. We have faith in God who has called us and has blessed us with the necessary gifts to do our best as men and women of integrity and men and women for others."
-  img_url="../assets/images/test.png"
+  img_url="../assets/images/Values and Student Leadership/faith.jpg"
 %}
 {% include components/img-by-text.html
   header="Service"

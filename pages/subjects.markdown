@@ -43,7 +43,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
   %}
   {% include components/card.html
     image_url="/assets/images/Subjects/grp-2.png"
-    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
+    link_url="https://drive.google.com/drive/folders/1B3K2nG54SgsgqpPkjHNnR0XMHr646cBH"
     title="Group 2"
     description="Language Acquisition"
     always_show_description=true
@@ -52,7 +52,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
   %}
   {% include components/card.html
     image_url="/assets/images/Subjects/grp-3.png"
-    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
+    link_url="https://drive.google.com/drive/folders/104L7eKpTBxi_JELECz-n-26GwIMiuTMZ"
     title="Group 3"
     description="Individuals & Societies"
     always_show_description=true
@@ -61,7 +61,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
   %}
   {% include components/card.html
     image_url="/assets/images/Subjects/grp-4.png"
-    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
+    link_url="https://drive.google.com/drive/folders/1CQ3RKXYa6Llcj_L2M9SGXw3F0n7SYSOD"
     title="Group 4"
     description="Experimental Science"
     always_show_description=true
@@ -79,7 +79,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
   %}
   {% include components/card.html
     image_url="/assets/images/Subjects/grp-6.png"
-    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
+    link_url="https://drive.google.com/file/d/1XB_4t_Ngb3_NFF9sIVNcNKMbm5h21WYh/view?usp=drive_link"
     title="Group 6"
     description="The Arts"
     always_show_description=true
@@ -94,7 +94,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 
 {% include components/img-by-text.html
    header=""
-   description="The Theory of Knowledge (TOK) course develops in the students an interdisciplinary and coherent approach to learning that unifies the academic areas, and at the same time encourages appreciation of other cultural perspectives.<br><br>TOK encourages critical thinking about knowledge itself and aims to help young people make sense of what they encounter. It makes students aware of the nature of knowledge and personal biases and offers the chance for them to reflect and recognise the role of knowledge and apply it with greater awareness and credibility.<br>For the IB Diploma assessment, students are to complete an essay and create an exhibition of three objects with accompanying commentaries to explore how TOK manifests in the world.For more information, visit: [IB TOK](https://www.ibo.org/programmes/diploma-programme/curriculum/theory-of-knowledge/)"
+   description="The Theory of Knowledge (TOK) course develops in the students an interdisciplinary and coherent approach to learning that unifies the academic areas, and at the same time encourages appreciation of other cultural perspectives.<br><br>TOK encourages critical thinking about knowledge itself and aims to help young people make sense of what they encounter. It makes students aware of the nature of knowledge and personal biases and offers the chance for them to reflect and recognise the role of knowledge and apply it with greater awareness and credibility.<br>For the IB Diploma assessment, students are to complete an essay and create an exhibition of three objects with accompanying commentaries to explore how TOK manifests in the world.For more information, visit: <a href='https://drive.google.com/file/d/1qK-1IEGRxo9WgkFtQSc8OR7NefLBjAIL/view?usp=drive_link'>IB TOK</a>"
    img_url="/assets/images/Subjects/tok.png"
 %}
 
@@ -104,7 +104,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 
 {% include components/img-by-text.html
    header=""
-   description="The Extended Essay (EE) provides students with an opportunity to engage in personal research in a topic of their choice, under the guidance of a supervisor. The EE promotes high-level research and writing skills, intellectual discovery and creativity, and acquaints students with the independent research and writing skills expected at university. The EE journey culminates in a major piece of formally presented and structured writing (3500-4000 words), in which ideas and findings are communicated in a reasoned and coherent manner, appropriate to the subject chosen.<br><br> Through continual process reflection, students are able to demonstrate the rationale for decisions made and the skills and understandings developed, as well as the authenticity and intellectual initiative of their voice.<br><br> The learning involved in researching and writing the extended essay is closely aligned with the development of many of the characteristics described in the IB learner profile. Students are to a large extent, responsible for their own independent learning, through which they acquire and communicate in-depth knowledge and understanding.<br><br> The research process necessarily involves intellectual risk-taking and extensive reflection; open-mindedness, balance and fairness are key prerequisites for a good extended essay."
+   description="The Extended Essay (EE) provides students with an opportunity to engage in personal research in a topic of their choice, under the guidance of a supervisor. The EE promotes high-level research and writing skills, intellectual discovery and creativity, and acquaints students with the independent research and writing skills expected at university. The EE journey culminates in a major piece of formally presented and structured writing (3500-4000 words), in which ideas and findings are communicated in a reasoned and coherent manner, appropriate to the subject chosen.<br><br> Through continual process reflection, students are able to demonstrate the rationale for decisions made and the skills and understandings developed, as well as the authenticity and intellectual initiative of their voice.<br><br> The learning involved in researching and writing the extended essay is closely aligned with the development of many of the characteristics described in the IB learner profile. Students are to a large extent, responsible for their own independent learning, through which they acquire and communicate in-depth knowledge and understanding.<br><br> The research process necessarily involves intellectual risk-taking and extensive reflection; open-mindedness, balance and fairness are key prerequisites for a good extended essay. Find out more about EE at: <a href='https://drive.google.com/file/d/180CW55KI1FYCXB5HjH1YHpFESTP4O0Uh/view?usp=drive_link'>Extended Essay</a>"
    img_url="/assets/images/Subjects/ee.png"
 %}
 
