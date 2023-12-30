@@ -14,43 +14,51 @@
     }
 
     .carousel-container {
-        display:flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 1vh;
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 1vh;
     }
 
     .carousel-img-container {
-        display:flex;
-        height: 35vh;
-        flex-direction: row;
-        align-items: center;
-        justify-content: left;
+      display:flex;
+      width: 62.5vw;
+      height: 35vh;
+      flex-direction: row;
+      align-items: left;
+      justify-content: left;
+      overflow: hidden;
     }
     
     .carousel-img {
-        height: 35vh;
-        width: 20vw;
-        object-fit: cover;
-        margin: 0.5vw;
+      height: 35vh;
+      width: 20vw;
+      object-fit: cover;
+      margin: 0.5vw;
+      transition: filter 0.5s;
+      flex-grow: 1;
+      transition: transform 0.25s ease-out;
+    }
+    .carousel-img-container.no-transition .carousel-img {
+      transition: none;
     }
 
     .arrow-container {
-        display:flex;
-        padding: 0;
-        margin: 5vw;
-        transition: filter 0.5s;
+      display:flex;
+      padding: 0;
+      margin: 5vw;
     }
 
     .arrow-container:hover {
-        display:flex;
-        padding: 0;
-        margin: 5vw;
-        cursor: pointer;
-        filter: drop-shadow(0px 0px 5px #00664F);
+      display:flex;
+      padding: 0;
+      margin: 5vw;
+      cursor: pointer;
+      filter: drop-shadow(0px 0px 5px black);
     }
 </style>
+
 <div>
     {% assign data = site.data.gep %}
     {% for row in data%}
@@ -75,6 +83,15 @@
                   <div>
                     <img src="{{ row["third_pic"] | relative_url }}" class="carousel-img">
                   </div>
+                  <div>
+                    <img src="{{ row["fourth_pic"] | relative_url }}" class="carousel-img">
+                  </div>
+                  <div>
+                    <img src="{{ row["fifth_pic"] | relative_url }}" class="carousel-img">
+                  </div>
+                  <div>
+                    <img src="{{ row["sixth_pic"] | relative_url }}" class="carousel-img">
+                  </div>
                 </div>
               
                 <div class="arrow-container" id="next-button">
@@ -94,3 +111,53 @@
         </div>
     {% endfor %}
 </div>
+
+<script>
+  (() => { // run on load
+    let cont = document.querySelector("#{{ include.id }} .carousel-img-container");
+    let numImgs = cont.children.length;
+    cont.appendChild(cont.children[0].cloneNode());
+    cont.appendChild(cont.children[1].cloneNode());
+    cont.appendChild(cont.children[2].cloneNode());
+
+    // attribute "shown" stores the index of the leftmost image
+    cont.setAttribute("shown", "0");
+
+    // when right arrow is clicked, scroll to the right
+    let rightArrow = document.querySelector("#{{ include.id }} .right-arrow");
+    rightArrow.addEventListener("click", () => {
+      let newShown = parseInt(cont.getAttribute("shown")) + 1;
+      cont.querySelectorAll(".carousel-img").forEach(a => {
+        a.style.transform = `translateX(${-21 * newShown}vw)`
+      })
+      if (newShown == numImgs) {
+        newShown = 0
+        setTimeout(() => {
+          cont.querySelectorAll(".carousel-img").forEach(a => {
+            a.style.transform = ""
+          })
+          cont.classList.add("no-transition");
+          cont.classList.remove("no-transition");
+        }, 250)
+      }
+      cont.setAttribute("shown", newShown.toString());
+    })
+    // when right arrow is clicked, scroll to the right
+    let leftArrow = document.querySelector("#{{ include.id }} .left-arrow");
+    leftArrow.addEventListener("click", () => {
+      let newShown = parseInt(cont.getAttribute("shown")) - 1;
+      if (newShown == -1) {
+        newShown = numImgs - 1
+        cont.classList.add("no-transition");
+        cont.querySelectorAll(".carousel-img").forEach(a => {
+          a.style.transform = `translateX(${-21 * newShown}vw)`
+        })
+        cont.classList.remove("no-transition");
+      }
+      cont.querySelectorAll(".carousel-img").forEach(a => {
+        a.style.transform = `translateX(${-21 * newShown}vw)`
+      })
+      cont.setAttribute("shown", newShown.toString());
+    })
+  })()
+</script>

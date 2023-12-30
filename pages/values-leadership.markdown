@@ -38,7 +38,7 @@ permalink: /values-and-student-leadership/
 <div id="vision-mission-motto" class="flex-container">
   {% include components/card.html
     image_url="assets/images/Values and Student Leadership/vision.png"
-    link_url="/"
+    link_url="https://www.sji.edu.sg/about-sji/mission-vision-and-values/"
     title="Vision"
     description="A leading mission school that nurtures students to be future-ready through learning for life, living with integrity and inspiring through service."
     width="25vw"
@@ -46,7 +46,7 @@ permalink: /values-and-student-leadership/
   %}
   {% include components/card.html
     image_url="assets/images/Values and Student Leadership/mission.png"
-    link_url="/"
+    link_url="https://www.sji.edu.sg/about-sji/mission-vision-and-values/"
     title="Mission"
     description="Enabling youth in a Lasallian community to learn how to learn and to learn how to live; empowering them to become men and women of integrity and men and women for others."
     width="25vw"
@@ -54,7 +54,7 @@ permalink: /values-and-student-leadership/
   %}
   {% include components/card.html
     image_url="assets/images/Values and Student Leadership/motto.png"
-    link_url="/"
+    link_url="https://www.sji.edu.sg/about-sji/school-identity/"
     title="Motto"
     description="Ora et Labora<br>(Pray and work)"
     width="25vw"

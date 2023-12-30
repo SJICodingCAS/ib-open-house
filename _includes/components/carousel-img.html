@@ -8,25 +8,41 @@
   }
 
   .carousel-img-container {
-    display:flex;
+    width: 63vw;
     height: 35vh;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
+    overflow: hidden;
+    text-wrap: nowrap;
   }
   
   .carousel-img {
     height: 35vh;
     width: 20vw;
+    --transform-width: 21vw;
     object-fit: cover;
     margin: 0.5vw;
+    transition: filter 0.5s;
+    flex-grow: 1;
+    transition: transform 0.25s ease-out;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .carousel-img-container {
+      width: 61vw;
+    }
+    .carousel-img {
+      width: 60vw;
+      --transform-width: 62vw;
+    }
+  }
+
+  .carousel-img-container.no-transition .carousel-img {
+    transition: transform 0s;
   }
 
   .arrow-container {
     display:flex;
     padding: 0;
     margin: 5vw;
-    transition: filter 0.5s;
   }
 
   .arrow-container:hover {
@@ -39,9 +55,9 @@
 
 </style>
   
-<div class="carousel-container">
+<div class="carousel-container" id="{{ include.id }}">
 
-  <div class="arrow-container">
+  <div class="arrow-container left-arrow">
     <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M24 4L4 37L24 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
@@ -49,13 +65,11 @@
 
   <div class="carousel-img-container">
     {% for i in page.carousel-img %}
-    <div>
-      <img src="{{ i | relative_url }}" class="carousel-img">
-    </div>
+    <img src="{{ i | relative_url }}" class="carousel-img">
     {% endfor %}
   </div>
 
-  <div class="arrow-container">
+  <div class="arrow-container right-arrow">
     <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M4 4L24 37L4 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
@@ -64,4 +78,69 @@
 </div>
 
 <script>
+  (() => { // run on load
+    let cont = document.querySelector("#{{ include.id }} .carousel-img-container");
+    let numImgs = cont.children.length;
+    cont.appendChild(cont.children[0].cloneNode());
+    cont.appendChild(cont.children[1].cloneNode());
+    cont.appendChild(cont.children[2].cloneNode());
+
+    // attribute "shown" stores the index of the leftmost image
+    cont.setAttribute("shown", "0");
+    // attribute "scrolling" disables the arrows while it is scrolling
+
+    // when right arrow is clicked, scroll to the right
+    let rightArrow = document.querySelector("#{{ include.id }} .right-arrow");
+    rightArrow.addEventListener("click", () => {
+      if (cont.hasAttribute("scrolling")) return;
+      cont.setAttribute("scrolling", "1")
+
+      let newShown = parseInt(cont.getAttribute("shown")) + 1;
+      cont.querySelectorAll(".carousel-img").forEach(a => {
+        console.log(`translateX(calc(var(--transform-width) * -${newShown}))`);
+        a.style.transform = `translateX(calc(var(--transform-width) * -${newShown}))`
+      })
+      if (newShown == numImgs) {
+        newShown = 0
+        setTimeout(() => {
+          cont.classList.add("no-transition");
+          cont.querySelectorAll(".carousel-img").forEach(a => {
+              a.style.transform = ""
+            })
+          setTimeout(() => {
+            cont.classList.remove("no-transition");
+            cont.removeAttribute("scrolling")
+          }, 10)
+        }, 250)
+      } else {
+        setTimeout(() => {
+          cont.removeAttribute("scrolling")
+        }, 250)
+      }
+      cont.setAttribute("shown", newShown.toString());
+    })
+    // when right arrow is clicked, scroll to the right
+    let leftArrow = document.querySelector("#{{ include.id }} .left-arrow");
+    leftArrow.addEventListener("click", () => {
+      if (cont.hasAttribute("scrolling")) return;
+      cont.setAttribute("scrolling", "1")
+
+      let newShown = parseInt(cont.getAttribute("shown")) - 1;
+      if (newShown == -1) {
+        newShown = numImgs - 1
+        cont.classList.add("no-transition");
+        cont.querySelectorAll(".carousel-img").forEach(a => {
+          a.style.transform = `translateX(calc(var(--transform-width) * -${newShown + 1}))`
+        })
+      }
+      setTimeout(() => {
+        cont.classList.remove("no-transition");
+        cont.querySelectorAll(".carousel-img").forEach(a => {
+          a.style.transform = `translateX(calc(var(--transform-width) * -${newShown}))`
+        })
+        cont.setAttribute("shown", newShown.toString());
+        cont.removeAttribute("scrolling")
+      }, 10)
+    })
+  })()
 </script>

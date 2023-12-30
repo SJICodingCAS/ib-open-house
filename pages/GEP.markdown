@@ -3,7 +3,6 @@ layout: default
 permalink: /GEP/
 title: Global Education Programme
 banner-image-url: ../assets/images/Banners/gep.png
-carousel-img: ["../assets/images/GEP/bp/bp-1.png", "../assets/images/GEP/bp/bp-2.png", "../assets/images/GEP/bp/bp-3.png"]
 ---
 <style>
     .GEP-column-container {
