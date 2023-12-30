@@ -3,9 +3,10 @@
         background-color: #00664F;
         width: 100vw;
         /* height: 10vh; */
+        max-height: 150px;
     }
     .navbar-top {
-        padding: 1% 4% 1% 4%;
+        padding: 0% 4% 0% 4%;
     }
 
     .nav-container-desktop {
@@ -28,13 +29,14 @@
             display: none;
         }
         .nav-container-mobile {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        height: 10vh;
-    }
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height: 10vh;
+            max-height: 150px;
+        }
 
         .navbar {
             position: fixed;
@@ -51,7 +53,7 @@
             height: 10vh;
         }
         .mobile-banner-space {
-        display: none;
+            display: none;
         }
 
     }
@@ -106,6 +108,7 @@
     .mobile-banner-space {
         display: flex;
         height: 10vh;
+        max-height: 150px;
     }
 
     @-webkit-keyframes slide-left {
@@ -152,7 +155,6 @@
             </div>
         </div>
 
-        
         <div class="nav-contents-mobile">
             <a class="nav-element" href="/virtual-tour/">Virtual Tour</a>
             <a class="nav-element" href="/whysji/">#WHYSJI</a>
