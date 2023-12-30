@@ -20,8 +20,10 @@ carousel-img: ["../assets/images/whysji/carousel-1.png", "../assets/images/whysj
 # Why should you choose SJI
 As you embark on the next journey of your life, deciding where to go next may be a difficult decision. Hear from a few of our Josephians and the unique memories and experiences which they’ve had here in SJI, which made them say #whySJI
 
-<div class="video-container">
-  <iframe class="video" src="https://drive.google.com/file/d/1Sb4j-xvYn-7NbEB974GWI4oVUQks1RwT/preview" allow="autoplay"></iframe>
+<div class="video-container-outer">
+  <div class="video-container">
+    <iframe class="video" src="https://drive.google.com/file/d/1Sb4j-xvYn-7NbEB974GWI4oVUQks1RwT/preview" allow="autoplay"></iframe>
+  </div>
 </div>
 
 ---
@@ -35,5 +37,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <hr>
 
 <div style="width: 100%; text-align: center;">
-  <p>Find more of our key moments <a href="https://www.flickr.com/photos/stjosephsinstitution/">here</a>.</p>
+  <p>Find more of our key moments <a class="external" href="https://www.flickr.com/photos/stjosephsinstitution/">here</a>.</p>
 </div>
