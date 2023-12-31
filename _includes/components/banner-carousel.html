@@ -3,12 +3,17 @@
         position: relative;
         width: 100%;
         margin: 0 auto;
+        /* overflow: hidden; */
+        /* max-height: 60vh; */
     }
 
     .banner-carousel {
         display: flex;
-        aspect-ratio: 16 / 9;
+        /* aspect-ratio: 16 / 9; */
+        min-height: 25vh;
+        max-height: 75vh;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
@@ -22,8 +27,10 @@
 
     .banner-carousel img {
         flex: 1 0 100%;
+        width: 100vw;
         scroll-snap-align: start;
         object-fit: cover;
+        object-position: center;
     }
 
     .banner-carousel-nav {
@@ -37,12 +44,13 @@
     }
 
     .banner-carousel-nav a {
-        width: 0.5rem;
-        height: 0.5rem;
+        width: 1rem;
+        height: 1rem;
         border-radius: 50%;
         background-color: #fff;
         opacity: 0.75;
         transition: opacity ease 250ms;
+        border: #00664F solid 1px;
     }
 
     .banner-carousel-nav a:hover {
@@ -50,17 +58,27 @@
     }
 </style>
 
-<section class="container">
+<section class="banner-carousel-container">
 	<div class="banner-carousel-wrapper">
 		<div class="banner-carousel">
-			<img id="slide-1" src="https://images.unsplash.com/photo-1656464868371-602be27fd4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary orange planet in space" />
-			<img id="slide-2" src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary green planet in space" />
-			<img id="slide-3" src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary blue planet in space" />
+			<img id="slide-1" src="../assets/images/homepage-carousel/home-page-carousel-1.jpeg" />
+			<img id="slide-2" src="../assets/images/homepage-carousel/home-page-carousel-2.jpeg" />
+			<img id="slide-3" src="../assets/images/homepage-carousel/home-page-carousel-3.jpeg" />
+            <img id="slide-4" src="../assets/images/homepage-carousel/home-page-carousel-4.jpeg" />
+			<img id="slide-5" src="../assets/images/homepage-carousel/home-page-carousel-5.jpeg" />
+			<img id="slide-6" src="../assets/images/homepage-carousel/home-page-carousel-6.jpeg" />
 		</div>
 		<div class="banner-carousel-nav">
 			<a href="#slide-1"></a>
 			<a href="#slide-2"></a>
 			<a href="#slide-3"></a>
+            <a href="#slide-4"></a>
+			<a href="#slide-5"></a>
+			<a href="#slide-6"></a>
 		</div>
 	</div>
 </section>
+
+<script>
+    
+</script>

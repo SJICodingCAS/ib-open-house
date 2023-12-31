@@ -9,15 +9,14 @@
 
   .carousel-img-container {
     width: 63vw;
-    height: 35vh;
     overflow: hidden;
-    text-wrap: nowrap;
+    white-space: nowrap;
     font-size: 0; /* removes extra margin between images */
   }
   
   .carousel-img {
-    height: 35vh;
     width: 20vw;
+    aspect-ratio: 4/3;
     --transform-width: 21vw;
     object-fit: cover;
     margin: 0vw 0.5vw;
@@ -28,7 +27,16 @@
     border-radius: 10px;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1250px) {
+    .carousel-img-container {
+      width: 62vw;
+    }
+    .carousel-img {
+      width: 30vw;
+      --transform-width: 31vw;
+    }
+  }
+  @media only screen and (max-width: 750px) {
     .carousel-img-container {
       width: 61vw;
     }
@@ -113,11 +121,11 @@
             cont.classList.remove("no-transition");
             cont.removeAttribute("scrolling")
           }, 10)
-        }, 250)
+        }, 290)
       } else {
         setTimeout(() => {
           cont.removeAttribute("scrolling")
-        }, 250)
+        }, 290)
       }
       cont.setAttribute("shown", newShown.toString());
     })

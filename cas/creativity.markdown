@@ -3,5 +3,5 @@ layout: cas-strand
 permalink: /cas/creativity
 cas-strand: "Creativity"
 title: "Creativity"
-banner-image-url: ../assets/images/Banners/creativity.jpeg
+banner-image-url: ../assets/images/banners/creativity.jpeg
 ---

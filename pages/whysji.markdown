@@ -2,7 +2,7 @@
 layout: default
 permalink: /whysji/
 title: "#whySJI"
-banner-image-url: ../assets/images/Banners/why-sji.jpeg
+banner-image-url: ../assets/images/banners/why-sji.jpeg
 carousel-img: ["../assets/images/whysji/carousel-1.jpeg", "../assets/images/whysji/carousel-2.jpeg", "../assets/images/whysji/carousel-3.jpeg", "../assets/images/whysji/carousel-4.jpeg", "../assets/images/whysji/carousel-5.jpeg", "../assets/images/whysji/carousel-6.jpeg", "../assets/images/whysji/carousel-7.jpeg", "../assets/images/whysji/carousel-8.jpeg", "../assets/images/whysji/carousel-9.jpeg"]
 ---
 
