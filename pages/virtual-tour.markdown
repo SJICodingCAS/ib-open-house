@@ -2,7 +2,7 @@
 layout: default
 permalink: /virtual-tour/
 title: Virtual Tour
-banner-image-url: ../assets/images/Banners/virtual-tour.png
+banner-image-url: ../assets/images/Banners/virtual-tour.jpeg
 ---
 
 # About SJI Campus

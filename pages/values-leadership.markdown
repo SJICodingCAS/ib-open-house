@@ -1,6 +1,6 @@
 ---
 title: Values & Student Leadership
-banner-image-url: assets/images/Banners/values-and-leadership.png
+banner-image-url: assets/images/Banners/values-and-leadership.jpeg
 layout: default
 permalink: /values-and-student-leadership/
 ---
@@ -18,18 +18,18 @@ permalink: /values-and-student-leadership/
 {% include components/img-by-text.html
   header="Faith"
   description="Our schooling in SJI is a call from God, a vocation, to grow to our fullest potential in order to become men of integrity and men for others. We have faith in our ability as well as our peers’ ability to grow individually as persons to learn according to our natural ability and to act always with respect and responsibility. We have faith in God who has called us and has blessed us with the necessary gifts to do our best as men and women of integrity and men and women for others."
-  img_url="../assets/images/Values and Student Leadership/faith.jpg"
+  img_url="../assets/images/Values and Student Leadership/faith.jpeg"
 %}
 {% include components/img-by-text.html
   header="Service"
   description="Faith demands service, a response to serve within our school and more importantly to the wider community. As students in SJI we serve with zeal in whatever we do. We pay special attention to the last, the lost and the least (the marginalised and disadvantaged) both in our school community and outside it."
-  img_url="../assets/images/Values and Student Leadership/service.png"
+  img_url="../assets/images/Values and Student Leadership/service.jpeg"
   img_first=true
 %}
 {% include components/img-by-text.html
   header="Community"
   description="As students, Faith calls us to build a fraternal community in which we share a common mission and vision. We see our fellow brothers and we see our teachers as older sisters and brothers, all members of the one Lasallian family here at SJI. We carry out our mission together and by association with our teachers and fellow students."
-  img_url="../assets/images/Values and Student Leadership/community_2.png"
+  img_url="../assets/images/Values and Student Leadership/community_2.jpeg"
 %}
 
 ---
@@ -37,7 +37,7 @@ permalink: /values-and-student-leadership/
 # Our Vision, Our Mission, Our Motto
 <div id="vision-mission-motto" class="flex-container">
   {% include components/card.html
-    image_url="assets/images/Values and Student Leadership/vision.png"
+    image_url="assets/images/Values and Student Leadership/vision.jpeg"
     link_url="https://www.sji.edu.sg/about-sji/mission-vision-and-values/"
     title="Vision"
     description="A leading mission school that nurtures students to be future-ready through learning for life, living with integrity and inspiring through service."
@@ -45,7 +45,7 @@ permalink: /values-and-student-leadership/
     height="30vw"
   %}
   {% include components/card.html
-    image_url="assets/images/Values and Student Leadership/mission.png"
+    image_url="assets/images/Values and Student Leadership/mission.jpeg"
     link_url="https://www.sji.edu.sg/about-sji/mission-vision-and-values/"
     title="Mission"
     description="Enabling youth in a Lasallian community to learn how to learn and to learn how to live; empowering them to become men and women of integrity and men and women for others."
@@ -53,7 +53,7 @@ permalink: /values-and-student-leadership/
     height="30vw"
   %}
   {% include components/card.html
-    image_url="assets/images/Values and Student Leadership/motto.png"
+    image_url="assets/images/Values and Student Leadership/motto.jpeg"
     link_url="https://www.sji.edu.sg/about-sji/school-identity/"
     title="Motto"
     description="Ora et Labora<br>(Pray and work)"
@@ -97,7 +97,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
 # Find out more about our leadership positions!
 <div id="leadership-positions" class="flex-container">
   {% include components/card.html
-    image_url="assets/images/Values and Student Leadership/student-council.png"
+    image_url="assets/images/Values and Student Leadership/student-council.jpeg"
     link_url="/"
     title="School Council"
     description=""
@@ -105,7 +105,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
     height="20vw"
   %}
   {% include components/card.html
-    image_url="assets/images/Values and Student Leadership/fintan.png"
+    image_url="assets/images/Values and Student Leadership/fintan.jpeg"
     link_url="https://www.instagram.com/fintantsunami/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
     title="Fintan Fraternity"
     description=""
@@ -113,7 +113,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
     height="20vw"
   %}
   {% include components/card.html
-    image_url="assets/images/Values and Student Leadership/lawrence.png"
+    image_url="assets/images/Values and Student Leadership/lawrence.jpeg"
     link_url="https://www.instagram.com/lawrencefraternity/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
     title="Lawrence Fraternity"
     description=""
@@ -121,7 +121,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
     height="20vw"
   %}
   {% include components/card.html
-    image_url="assets/images/Values and Student Leadership/michael.png"
+    image_url="assets/images/Values and Student Leadership/michael.jpeg"
     link_url="https://www.instagram.com/redhotbuff/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
     title="Michael Fraternity"
     description=""
@@ -129,7 +129,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
     height="20vw"
   %}
   {% include components/card.html
-    image_url="assets/images/Values and Student Leadership/marcian.png"
+    image_url="assets/images/Values and Student Leadership/marcian.jpeg"
     link_url="https://www.instagram.com/marcianfraternity/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
     title="Marcian Fraternity"
     description=""
