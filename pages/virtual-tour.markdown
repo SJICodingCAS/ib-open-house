@@ -14,6 +14,6 @@ SJI has a vibrant and spacious campus filled with greenery and conducive spaces 
 
 <div class="video-container-outer">
     <div class="video-container">
-        <iframe class="video" src="https://drive.google.com/file/d/1vS7CyEhWEAkhgxsV7x-2INnz3_EsrJFF/preview" allow="autoplay"></iframe>
+        <iframe class="video" src="https://drive.google.com/file/d/1HSotwOR-QCm8aINrPcJ5t6tAhUkgqdg9/preview" allow="autoplay"></iframe>
     </div>
 </div>
