@@ -56,10 +56,14 @@
 
 <body>
     {% include navbar.html %} 
-    <div class="default-banner-container"> 
-        <img src="{{ page.banner-image-url | relative_url }}" class="default-banner-image">
-        <div class="default-banner-title">{{ page.title }}</div>
-    </div>
+    {% if page.carousel-banner %}
+        {% include components/banner-carousel.html id="carousel" %}
+    {% else %}
+        <div class="default-banner-container"> 
+            <img src="{{ page.banner-image-url | relative_url }}" class="default-banner-image">
+            <div class="default-banner-title">{{ page.title }}</div>
+        </div>
+    {% endif %}
 
     <div class="content">
         {{ content }}
