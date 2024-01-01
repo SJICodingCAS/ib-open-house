@@ -34,7 +34,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
 <div id="vision-mission-motto" class="flex-container">
   {% include components/card.html
     image_url="/assets/images/subjects/grp-1.jpeg"
-    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
+    link_url="https://drive.google.com/drive/folders/13LxGXL3BuorEN-TYmPNEzptGQx05MJwR?usp=sharing"
     title="Group 1"
     description="Studies in Language & Literature"
     always_show_description=true
@@ -70,7 +70,7 @@ Students study 6 subjects from 6 subject groups for a strong balanced academic f
   %}
   {% include components/card.html
     image_url="/assets/images/subjects/grp-5.jpeg"
-    link_url="https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/"
+    link_url="https://drive.google.com/drive/folders/1dZIyCO7xAlgEiU6gRCIetYcxCcEgTlAd?usp=sharing"
     title="Group 5"
     description="Mathematics"
     always_show_description=true
