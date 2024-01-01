@@ -98,7 +98,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
 <div id="leadership-positions" class="flex-container">
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/student-council.jpeg"
-    link_url="/"
+    link_url="/values-and-student-leadership/"
     title="School Council"
     description=""
     width="85vw"
@@ -106,7 +106,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
   %}
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/fintan.jpeg"
-    link_url="https://www.instagram.com/fintantsunami/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
+    link_url="/values-and-student-leadership/"
     title="Fintan Fraternity"
     description=""
     width="42vw"
@@ -114,7 +114,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
   %}
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/lawrence.jpeg"
-    link_url="https://www.instagram.com/lawrencefraternity/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
+    link_url="/values-and-student-leadership/"
     title="Lawrence Fraternity"
     description=""
     width="42vw"
@@ -122,7 +122,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
   %}
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/michael.jpeg"
-    link_url="https://www.instagram.com/redhotbuff/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
+    link_url="/values-and-student-leadership/"
     title="Michael Fraternity"
     description=""
     width="42vw"
@@ -130,7 +130,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
   %}
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/marcian.jpeg"
-    link_url="https://www.instagram.com/marcianfraternity/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
+    link_url="/values-and-student-leadership/"
     title="Marcian Fraternity"
     description=""
     width="42vw"
