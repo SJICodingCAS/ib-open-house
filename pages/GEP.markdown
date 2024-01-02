@@ -101,7 +101,7 @@ In addition, the GEP leverages on the innovative programmes and dynamic learning
 
 ---
 
-# Join Us on Our Field Trips!
+# Join Us on Our Field Trips in 2023!
 Join our Josephians vicariously on our various field trips to different countries in 2023!
 
 {% include components/gep-trip.html %}
