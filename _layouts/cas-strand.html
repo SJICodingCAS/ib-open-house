@@ -82,7 +82,7 @@ permalink: /cas-strand
         {% assign data = site.data.service %}
     {% endif %}
     <h1>Table of Content</h1>
-    <div class="CAS-specific-table">
+    <div id="table-of-content" class="CAS-specific-table">
         <div class="CAS-specific-table-head">{{ page.cas-strand }}</div>
         <div class="CAS-specific-table-row">
             {% for row in data %}
@@ -115,6 +115,7 @@ permalink: /cas-strand
             <p class="CAS-description">{{ row["Description"] }}</p>
             <img class="img-cas-strand" src="{{row['Photo']}}">
         </div>
+        <a href="#table-of-content">Back to table of content</a>
         <hr>
     {% endfor %}
 </body>
