@@ -14,19 +14,19 @@ The 2023 SJI IBDP Open House website was a collaborative project of the Coding a
 - Ignatius Tan Kai Wen, Technical Advisor
 - Dinh Nho An, Technical Advisor
 - Bernadette Joy Hardi, Technical Advisor
-- Tan Siyuan Tanis
-- Brandon Samuel Teo Hou Yang
+- Tan Siyuan Tanis, Member
+- Brandon Samuel Teo Hou Yang, Member
 
 ---
 
-## 2023-2024 Student Council's Open House Persons in Charge:
+## 2023-2024 Student Council:
 - Rachel Sonsun, President
 - Horatius Koh Jin Yang, Vice-President
 - Choo Yi Ming, Secretary
-- Chloe Chai Rui En
-- R Sai Shashank
-- Joelle Low Yan Ting
-- Thng Toh Yong Wesley
+- Chloe Chai Rui En, Member
+- R Sai Shashank, Member
+- Joelle Low Yan Ting, Member
+- Thng Toh Yong Wesley, Member
 
 ---
 
