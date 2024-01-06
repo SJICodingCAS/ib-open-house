@@ -34,7 +34,6 @@ heading-data-pair:
         - ""
         - ""
         - ""
-        - ""
     - heading: "Service"
       cell:
         - "<a href='/cas/service'>1. BEACON</a>"
@@ -45,7 +44,7 @@ heading-data-pair:
         - "<a href='/cas/service'>6. Paper Bridges</a>"
         - "<a href='/cas/service'>7. PRISM</a>"
         - "<a href='/cas/service'>8. YoungXHush</a>"
-        - ""s
+        - ""
         - ""
         - ""
         - ""
