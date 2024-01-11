@@ -30,7 +30,7 @@ heading-data-pair:
         - "<a href='/cas/activity'>7. Football (GIRLS)</a>"
         - "<a href='/cas/activity'>8. Hockey</a>"
         - "<a href='/cas/activity'>9. Ultimate Frisbee</a>"
-        - "<a href='/cas/activity'>10. Voleyball</a>"
+        - "<a href='/cas/activity'>10. Volleyball</a>"
         - ""
         - ""
         - ""
