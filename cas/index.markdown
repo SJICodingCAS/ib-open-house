@@ -17,8 +17,7 @@ heading-data-pair:
         - "<a href='/cas/creativity'>9. Rock-A-Cause</a>"
         - "<a href='/cas/creativity'>10. Science Club</a>"
         - "<a href='/cas/creativity'>11. Society of International & Current Affairs (SICA)</a>"
-        - "<a href='/cas/creativity'>12. Ukulele</a>"
-        - "<a href='/cas/creativity'>13. Visual Arts Club</a>"
+        - "<a href='/cas/creativity'>12. Visual Arts Club</a>"
     - heading: "Activity"
       cell:
         - "<a href='/cas/activity'>1. Badminton</a>"
