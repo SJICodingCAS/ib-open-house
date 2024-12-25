@@ -8,25 +8,30 @@ banner-image-url: /assets/images/test.png
 The 2023 SJI IBDP Open House website was a collaborative project of the Coding and Technology CAS and the 2024 Open House ICs from the Student Council.
 
 ## 2023-2024 Coding and Technology CAS:
-- Le Trung Kien, President
-- Chen Wei En James Ryan, Vice President
-- Joshua Hanitio, Vice President
-- Ignatius Tan Kai Wen, Technical Advisor
-- Dinh Nho An, Technical Advisor
-- Bernadette Joy Hardi, Technical Advisor
-- Tan Siyuan Tanis, Member
-- Brandon Samuel Teo Hou Yang, Member
+- Brayden Chang Jon Yon, President
+- Jack Li Murray Wigmore, Vice President
+- Kum Trakal, Vice President
+- Rueben Yong Yao Kai, Technical Advisor
+- Lauren Tan Kee Ann, Member
+- Marcus Chew Hong Heok, Member
+- Ridha Fathima Nowshad, Member
+- Leedon Yong Zheng Rong, Member
+- Jay Lim Yi Yong, Member
+- Koay Tye Zhung Ethan, Member
 
 ---
 
 ## 2023-2024 Student Council:
-- Rachel Sonsun, President
-- Horatius Koh Jin Yang, Vice-President
-- Choo Yi Ming, Secretary
-- Chloe Chai Rui En, Member
-- R Sai Shashank, Member
-- Joelle Low Yan Ting, Member
-- Thng Toh Yong Wesley, Member
+- Nicholas Pramono, President
+- Johnathan Chen Xiao Jing, Vice-President
+- Kate Nattaya Sia, Vice-President
+- Koh Hui En Jan, Member
+- Sim Yan Zhao Daniel, Member
+- Kylie Anya Ow, Member
+- Gautheir Hugo, Member
+- Foo Yuk Yong Jayden, Member
+- Ciaran Liam Condron, Member
+- Meryle Chng Ying Xin, Member
 
 ---
 
