@@ -5,9 +5,9 @@ title: Credits
 banner-image-url: /assets/images/test.png
 ---
 
-The 2023 SJI IBDP Open House website was a collaborative project of the Coding and Technology CAS and the 2024 Open House ICs from the Student Council.
+The SJI IBDP Open House website was a collaborative project of the Coding and Technology CAS and the Open House ICs from the Student Council, first initiated for the 2024 Open House.
 
-## 2023-2024 Coding and Technology CAS:
+## 2024-2025 Coding and Technology CAS:
 - Brayden Chang Jon Yon, President
 - Jack Li Murray Wigmore, Vice President
 - Kum Trakal, Vice President
@@ -21,7 +21,7 @@ The 2023 SJI IBDP Open House website was a collaborative project of the Coding a
 
 ---
 
-## 2023-2024 Student Council:
+## 2024-2025 Student Council:
 - Nicholas Pramono, President
 - Johnathan Chen Xiao Jing, Vice-President
 - Kate Nattaya Sia, Vice-President
