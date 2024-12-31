@@ -98,7 +98,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
 <div id="leadership-positions" class="flex-container">
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/student-council.jpeg"
-    link_url="/values-and-student-leadership/#leadership-positions"
+    link_url="https://www.instagram.com/thesjispirit?igsh=MWhyZWZ6b2oyYTQwYg=="
     title="School Council"
     description=""
     width="85vw"
@@ -106,7 +106,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
   %}
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/fintan.jpeg"
-    link_url="/values-and-student-leadership/#leadership-positions"
+    link_url="https://www.instagram.com/fintantsunami?igsh=MWJmMnpmNDdlNWV4aQ=="
     title="Fintan Fraternity"
     description=""
     width="42vw"
@@ -114,7 +114,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
   %}
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/lawrence.jpeg"
-    link_url="/values-and-student-leadership/#leadership-positions"
+    link_url="https://www.instagram.com/lawrencefraternity?igsh=MTJtOWlkM3N3a2UzOA=="
     title="Lawrence Fraternity"
     description=""
     width="42vw"
@@ -122,7 +122,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
   %}
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/michael.jpeg"
-    link_url="/values-and-student-leadership/#leadership-positions"
+    link_url="https://www.instagram.com/redhotbuff?igsh=MThoeW5manAybDdhdQ=="
     title="Michael Fraternity"
     description=""
     width="42vw"
@@ -130,7 +130,7 @@ Every student is expected to be an agent for the transmission of the Lasallian v
   %}
   {% include components/card.html
     image_url="assets/images/values-and-student-leadership/marcian.jpeg"
-    link_url="/values-and-student-leadership/#leadership-positions"
+    link_url="https://www.instagram.com/marcianfraternity?igsh=MWZlc3A1bTNncDZtNQ=="
     title="Marcian Fraternity"
     description=""
     width="42vw"
