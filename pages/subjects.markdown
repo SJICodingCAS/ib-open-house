@@ -31,7 +31,7 @@ The challenging curriculum educates the whole student aiming to develop their ca
 
 Find out more as our Josephians share their experiences in the IB programme, from the different subjects groups to the unique components that form the global approach.
 
-# IB curriculum EE at SJI
+# IB curriculum and EE at SJI
 
 <div class="video-container-outer">
   <div class="video-container">

@@ -8,7 +8,7 @@ heading-data-pair:
       cell: 
         - "<a href='/cas/creativity'>Astronomy</a>"
         - "<a href='/cas/creativity'>Debate Society</a>"
-        - "<a href='/cas/creativity'>Ecology Club</a>"
+        - "<a href='/cas/creativity'>Green Connect</a>"
         - "<a href='/cas/creativity'>Film Club</a>"
         - "<a href='/cas/creativity'>Literary Society</a>"
         - "<a href='/cas/creativity'>Mathematics and Coding Club</a>"
@@ -18,7 +18,6 @@ heading-data-pair:
         - "<a href='/cas/creativity'>Society of International & Current Affairs (SICA)</a>"
         - "<a href='/cas/creativity'>Visual Arts Club</a>"
         - "<a href='/cas/service'>Prism</a>"
-        - ""
     - heading: "Activity"
       cell:
         - "<a href='/cas/activity'>Badminton</a>"
@@ -28,7 +27,6 @@ heading-data-pair:
         - "<a href='/cas/activity'>Dragon Boat</a>"
         - "<a href='/cas/activity'>Football (BOYS)</a>"
         - "<a href='/cas/activity'>Football (GIRLS)</a>"
-        - "<a href='/cas/activity'>Hockey</a>"
         - "<a href='/cas/activity'>Ultimate Frisbee</a>"
         - "<a href='/cas/activity'>St Joseph's Pelandok Scouts</a>"
         - "<a href='/cas/activity'>Cross Country</a>"
@@ -41,7 +39,6 @@ heading-data-pair:
         - "<a href='/cas/service'>kidsRead</a>"
         - "<a href='/cas/service'>Lasallian Youth</a>"
         - "<a href='/cas/service'>Paper Bridges</a>"
-        - ""
         - ""
         - ""
         - ""
