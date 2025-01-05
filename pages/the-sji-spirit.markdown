@@ -18,11 +18,11 @@ carousel-img: ["../assets/images/the-sji-spirit/carousel (1).jpg", "../assets/im
 </style>
 
 # Why should you choose SJI
-As you embark on the next journey of your life, deciding where to go next may be a difficult decision. Hear from a few of our Josephians and the unique memories and experiences which they’ve had here in SJI, which made them say #the-sji-spirit
+As you embark on the next chapter of your life, deciding where to go next may be a difficult decision. Hear from a few of our Josephians and the special memories and experiences they’ve gained here in SJI. And find out what The SJI Spirit really means to them!
 
 <div class="video-container-outer">
   <div class="video-container">
-    <iframe class="video" src="https://drive.google.com/file/d/1sEzflrmDGoJmKBRT9Dfuh1NnGnKM-DIc/preview" allow="autoplay"></iframe>
+    <iframe class="video" src="https://drive.google.com/file/d/1Oi0jTYDv6uDPKsYdoQqcVJW0nPaV8L_i/preview" allow="autoplay"></iframe>
   </div>
 </div>
 

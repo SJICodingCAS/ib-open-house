@@ -27,6 +27,30 @@ The challenging curriculum educates the whole student aiming to develop their ca
 
 ---
 
+# Hearing from the students
+
+Find out more as our Josephians share their experiences in the IB programme, from the different subjects groups to the unique components that form the global approach.
+
+# IB curriculum EE at SJI
+
+<div class="video-container-outer">
+  <div class="video-container">
+    <iframe class="video" src="https://drive.google.com/file/d/1a8puz4alYu19aCalAgOpwwZwrGjFKaN3/preview" allow="autoplay"></iframe>
+  </div>
+</div>
+
+<br/>
+
+# TOK and IA at SJI
+
+<div class="video-container-outer">
+  <div class="video-container">
+    <iframe class="video" src="https://drive.google.com/file/d/1_gA7mLmpTIPWqqK1mNNXRiRRY_ShtMK6/preview" allow="autoplay"></iframe>
+  </div>
+</div>
+
+---
+
 # IB Subject Groups
 
 Students study 6 subjects from 6 subject groups for a strong balanced academic foundation, with 3 at Standard Level (SL) and 3 at Higher Level (HL) to recognize strengths and interests. To find our more about our exciting subjects on offer, visit [here](https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/#Academic Subject content on SJI website).

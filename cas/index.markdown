@@ -62,12 +62,24 @@ CAS experiences should be:
 * Real, purposeful activities, with significant outcomes
 * Personally challenging - tasks must extend the student and be achievable in scope
 * Thoughtfully considered, such as planning, reviewing progress and reporting
-* reflection on outcomes and personal learning
+* Reflection on outcomes and personal learning
 
 Students must demonstrate satisfactory participation in CAS for the award of the IB Diploma. 
 This is achieved through the student’s active and balanced engagement in all three strands: 
 creativity, activity and service and through having demonstrated the seven learning outcomes 
 observed in the student’s personal reflections.
+
+---
+
+# Hear from our students about their CAS experiences!
+
+<div class="video-container-outer">
+  <div class="video-container">
+    <iframe class="video" src="https://drive.google.com/file/d/1vGY_pTZwwPD2h0FgpA6kL-eyARiB_Gra/preview" allow="autoplay"></iframe>
+  </div>
+</div>
+
+<br/>
 
 ---
 
