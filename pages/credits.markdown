@@ -8,8 +8,9 @@ banner-image-url: /assets/images/test.png
 The SJI IBDP Open House website was a collaborative project of the Coding and Technology CAS and the Open House ICs from the Student Council, first initiated for the 2024 Open House.
 
 ## 2024-2025 Coding and Technology CAS:
-- Jack Li Murray Wigmore, Vice President
-- Kum Trakal, Vice President
+- Jack Li Murray Wigmore, Vice President, Web Team Lead
+- Kum Trakal, Vice President, Web Team Lead
+- Brayden Chang Jon Yon, President
 - Rueben Yong Yao Kai, Technical Advisor
 - Lauren Tan Kee Ann, Member
 - Marcus Chew Hong Heok, Member
