@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{{ site.title }} | {{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""
+    />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            font-family: 'Lato', sans-serif;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            background: #e6f7ff;
+        }
+
+        #menu-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1003;
+            background-color: #fff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 30px;
+        }
+
+        #menu-button .bar {
+            width: 25px;
+            height: 3px;
+            padding-bottom: 2px;
+            background-color: #0A3C30;
+            margin: 3px 1px;
+            transition: all 0.3s ease;
+        }
+
+        #menu-button.open .bar1 {
+            transform: rotate(40deg) translate(6px, 6px) scaleX(1.2);
+        }
+
+        #menu-button.open .bar2 {
+            opacity: 0;
+        }
+
+        #menu-button.open .bar3 {
+            transform: rotate(-40deg) translate(5px, -6px) scaleX(1.2);
+        }
+
+        #side-menu {
+            position: fixed;
+            top: 0;
+            left: -60%;
+            width: 400px;
+            height: 100%;
+            background-color: #00664f;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+            z-index: 1002;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+
+        #side-menu.open {
+            left: 0;
+        }
+
+        #side-menu ul {
+            list-style: none;
+            padding: 60px 20px 20px 20px;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        #side-menu ul li {
+            margin: 15px 0;
+        }
+
+        #side-menu ul li a {
+            display: block;
+            width: 100% - 20px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        #side-menu ul li a:hover {
+            background-color: #f0f0f0;
+            color: #0A3C30;
+        }
+
+        #menu-footer {
+            text-align: center;
+            font-size: 12px;
+            color: #dddddd;
+            padding: 10px 20px;
+            white-space: nowrap;
+            text-wrap: wrap;
+        }
+
+        #toggle-markers-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1003;
+            background-color: #fff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        #toggle-markers-button::before {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #0A3C30;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background-color: #0A3C30;
+        }
+
+        #toggle-markers-button.active::before {
+            background-color: transparent;
+        }
+
+        #floor-toggle-buttons {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 1003;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .floor-button {
+            background-color: #fff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .floor-button::before {
+            content: attr(data-icon);
+            display: block;
+            font-size: 14px;
+            color: #0A3C30;
+            transition: all 0.3s ease;
+        }
+
+        .floor-button.active {
+            background-color: #0A3C30;
+        }
+
+        .floor-button.active::before {
+            color: #fff;
+        }
+
+        #menu-button {
+            position: fixed;
+        }
+
+        #menu-button::after {
+            content: "Menu";
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            margin-left: 8px;
+            font-size: 12px;
+        }
+
+        #menu-button:hover::after {
+            opacity: 1;
+        }
+
+        #toggle-markers-button {
+            position: fixed;
+        }
+
+        #toggle-markers-button::after {
+            content: "Toggle Markers";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        #toggle-markers-button:hover::after {
+            opacity: 1;
+        }
+
+        #floor2-button {
+            position: relative;
+        }
+
+        #floor2-button::after {
+            content: "Switch to Floor 2";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        #floor2-button:hover::after {
+            opacity: 1;
+        }
+
+        #floor1-button {
+            position: relative;
+        }
+
+        #floor1-button::after {
+            content: "Switch to Floor 1";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        #floor1-button:hover::after {
+            opacity: 1;
+        }
+
+        .leaflet-control-zoom-in {
+            position: relative;
+        }
+
+        .leaflet-control-zoom-in::after {
+            content: "Zoom in";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            margin-right: 8px;
+            font-size: 12px;
+            font-family: Arial;
+            font-weight: 100;
+        }
+
+        .leaflet-control-zoom-in:hover::after {
+            opacity: 1;
+        }
+
+        .leaflet-control-zoom-out {
+            position: relative;
+        }
+
+        .leaflet-control-zoom-out::after {
+            content: "Zoom out";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            margin-right: 8px;
+            font-size: 12px;
+            font-family: Arial;
+            font-weight: 100;
+        }
+
+        .leaflet-control-zoom-out:hover::after {
+            opacity: 1;
+        }
+
+        @media (max-width: 600px) {
+            #side-menu {
+                width: 200px;
+                left: -200px;
+            }
+
+            #side-menu.open {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="toggle-markers-button" aria-label="Hide Markers" aria-pressed="false"></button>
+
+    <div id="floor-toggle-buttons">
+        <button class="floor-button" id="floor2-button" data-icon="L2" aria-label="Switch to Floor 2" aria-pressed="false"></button>
+        <button class="floor-button" id="floor1-button" data-icon="L1" aria-label="Switch to Floor 1" aria-pressed="false"></button>
+    </div>
+
+    <button id="menu-button" aria-label="Open Menu" aria-expanded="false">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+    </button>
+
+    <div id="side-menu">
+        <ul>
+            <li><a target="_blank" href="https://www.sji.edu.sg/">OFFICIAL SJI WEBSITE</a></li>
+            <li><a target="_blank" href="https://ibdp-openhouse.sji.edu.sg/">2025 OPEN HOUSE WEBSITE</a></li>
+            <li><a target="_blank" href="https://ibdp-openhouse.sji.edu.sg/assets/schedule/open-house-schedule.pdf">EVENT SCHEDULE</a></li>
+            <li><a target="_blank" href="https://www.instagram.com/stjosephsinstitution?igsh=MWUxbWYwNWxvcGJrYQ==">CHECK OUT OUR IG!</a></li>
+        </ul>
+        <div id="menu-footer">Made with love by SJI Coding&Tech</div>
+    </div>
+
+    <div id="map"></div>
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="">
+    </script>
+
+    <script>
+        const floor1ImageUrl = '../assets/images/interactive-map/floors/finished_map_floor1.png';
+        const floor2ImageUrl = '../assets/images/interactive-map/floors//finished_map_floor2.png';
+
+        const imageWidth = 3502;
+        const imageHeight = 2885;
+
+        const imageBounds = [[0, 0], [imageHeight, imageWidth]];
+
+        const map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -2,
+            maxZoom: 2,
+            zoomControl: true,
+            maxBounds: [[-1000, -1000], [imageHeight + 1000, imageWidth + 1000]],
+            maxBoundsViscosity: 1.0
+        });
+
+        map.zoomControl.setPosition('bottomright');
+
+        const floor1Overlay = L.imageOverlay(floor1ImageUrl, imageBounds);
+        floor1Overlay.addTo(map);
+
+        const floor2Overlay = L.imageOverlay(floor2ImageUrl, imageBounds);
+
+        map.fitBounds(imageBounds);
+
+        const iconTypes = {
+            'class': L.icon({
+                iconUrl: '../assets/images/interactive-map/markers/class.png',
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -42]
+            }),
+            'female-toilet': L.icon({
+                iconUrl: '../assets/images/interactive-map/markers/female-toilet.png',
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -42]
+            }),
+            'food': L.icon({
+                iconUrl: '../assets/images/interactive-map/markers/food.png',
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -42]
+            }),
+            'games': L.icon({
+                iconUrl: '../assets/images/interactive-map/markers/games.png',
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -42]
+            }),
+            'info': L.icon({
+                iconUrl: '../assets/images/interactive-map/markers/info.png',
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -42]
+            }),
+            'male-toilet': L.icon({
+                iconUrl: '../assets/images/interactive-map/markers/male-toilet.png',
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -42]
+            }),
+            'performances': L.icon({
+                iconUrl: '../assets/images/interactive-map/markers/performances.png',
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -42]
+            }),
+        };
+
+        const floor1MarkersLayer = L.layerGroup();
+        const floor2MarkersLayer = L.layerGroup();
+
+        const floor1Markers = [
+            { name: "Classroom 1", coords: [500, 800], type: 'class' },
+            { name: "Games Area 1", coords: [1000, 1000], type: 'games' },
+            { name: "Food Court 1", coords: [750, 300], type: 'food' },
+            { name: "Female Toilet 1", coords: [300, 500], type: 'female-toilet' },
+            { name: "Male Toilet 1", coords: [400, 600], type: 'male-toilet' },
+            { name: "Information Desk 1", coords: [850, 700], type: 'info' },
+            { name: "Performance Stage 1", coords: [950, 850], type: 'performances' }
+        ];
+
+        const floor2Markers = [
+            { name: "Classroom 2", coords: [0, 0], type: 'class' },
+            { name: "Games Area 2", coords: [1020, 1020], type: 'games' },
+            { name: "Food Court 2", coords: [770, 320], type: 'food' },
+            { name: "Female Toilet 2", coords: [320, 520], type: 'female-toilet' },
+            { name: "Male Toilet 2", coords: [420, 620], type: 'male-toilet' },
+            { name: "Information Desk 2", coords: [870, 720], type: 'info' },
+            { name: "Performance Stage 2", coords: [970, 870], type: 'performances' }
+        ];
+
+        function addMarkers(markersArray, layerGroup) {
+            markersArray.forEach(marker => {
+                const customIcon = iconTypes[marker.type];
+                if (customIcon) {
+                    const leafletMarker = L.marker(marker.coords, { icon: customIcon })
+                        .bindPopup(marker.name);
+                    leafletMarker.addTo(layerGroup);
+                } else {
+                    console.warn(`Marker type '${marker.type}' not found. Using default icon.`);
+                    const leafletMarker = L.marker(marker.coords)
+                        .bindPopup(marker.name);
+                    leafletMarker.addTo(layerGroup);
+                }
+            });
+        }
+
+        addMarkers(floor1Markers, floor1MarkersLayer);
+        addMarkers(floor2Markers, floor2MarkersLayer);
+
+        floor1MarkersLayer.addTo(map);
+
+        let visibleMarkersLayer = floor1MarkersLayer;
+
+        const menuButton = document.getElementById('menu-button');
+        const sideMenu = document.getElementById('side-menu');
+
+        function toggleMenu() {
+            const isOpen = sideMenu.classList.toggle('open');
+            menuButton.classList.toggle('open');
+            menuButton.setAttribute('aria-expanded', isOpen);
+            if (isOpen) {
+                menuButton.setAttribute('aria-label', 'Close Menu');
+            } else {
+                menuButton.setAttribute('aria-label', 'Open Menu');
+            }
+        }
+
+        menuButton.addEventListener('click', toggleMenu);
+
+        document.addEventListener('click', function(event) {
+            if (!sideMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                if (sideMenu.classList.contains('open')) {
+                    sideMenu.classList.remove('open');
+                    menuButton.classList.remove('open');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    menuButton.setAttribute('aria-label', 'Open Menu');
+                }
+            }
+        });
+
+        sideMenu.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        const toggleMarkersButton = document.getElementById('toggle-markers-button');
+        let markersVisible = true;
+
+        function toggleMarkers() {
+            if (markersVisible) {
+                map.removeLayer(visibleMarkersLayer);
+                toggleMarkersButton.classList.add('active');
+                toggleMarkersButton.setAttribute('aria-label', 'Show Markers');
+                toggleMarkersButton.setAttribute('aria-pressed', 'true');
+            } else {
+                map.addLayer(visibleMarkersLayer);
+                toggleMarkersButton.classList.remove('active');
+                toggleMarkersButton.setAttribute('aria-label', 'Hide Markers');
+                toggleMarkersButton.setAttribute('aria-pressed', 'false');
+            }
+            markersVisible = !markersVisible;
+        }
+
+        toggleMarkersButton.addEventListener('click', toggleMarkers);
+
+        const floor2Button = document.getElementById('floor2-button');
+        const floor1Button = document.getElementById('floor1-button');
+
+        function switchToFloor2() {
+            if (visibleMarkersLayer !== floor2MarkersLayer) {
+                if (markersVisible) {
+                    map.removeLayer(visibleMarkersLayer);
+                }
+
+                map.removeLayer(floor1Overlay);
+                floor2Overlay.addTo(map);
+                visibleMarkersLayer = floor2MarkersLayer;
+
+                if (markersVisible) {
+                    map.addLayer(visibleMarkersLayer);
+                }
+
+                floor2Button.classList.add('active');
+                floor1Button.classList.remove('active');
+                floor2Button.setAttribute('aria-pressed', 'true');
+                floor1Button.setAttribute('aria-pressed', 'false');
+            }
+        }
+
+        function switchToFloor1() {
+            if (visibleMarkersLayer !== floor1MarkersLayer) {
+                if (markersVisible) {
+                    map.removeLayer(visibleMarkersLayer);
+                }
+
+                map.removeLayer(floor2Overlay);
+                floor1Overlay.addTo(map);
+                visibleMarkersLayer = floor1MarkersLayer;
+
+                if (markersVisible) {
+                    map.addLayer(visibleMarkersLayer);
+                }
+
+                floor1Button.classList.add('active');
+                floor2Button.classList.remove('active');
+                floor1Button.setAttribute('aria-pressed', 'true');
+                floor2Button.setAttribute('aria-pressed', 'false');
+            }
+        }
+
+        floor2Button.addEventListener('click', switchToFloor2);
+        floor1Button.addEventListener('click', switchToFloor1);
+
+        floor1Button.classList.add('active');
+        floor1Button.setAttribute('aria-pressed', 'true');
+    </script>
+</body>
+</html>
