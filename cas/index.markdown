@@ -68,11 +68,22 @@ observed in the student’s personal reflections.
 
 ---
 
+# Find out more about the CAS programmes in IBDP
+
+<div class="video-container-outer">
+  <div class="video-container">
+    <iframe class="video" src="https://drive.google.com/file/d/1n_0KtE2In5-WZoWYTJy0AQMI7cDYbMd8/preview" allow="autoplay"></iframe>
+  </div>
+</div>
+
+
+---
+
 # Hear from our students about their CAS experiences!
 
 <div class="video-container-outer">
   <div class="video-container">
-    <iframe class="video" src="https://drive.google.com/file/d/1vGY_pTZwwPD2h0FgpA6kL-eyARiB_Gra/preview" allow="autoplay"></iframe>
+    <iframe class="video" src="https://drive.google.com/file/d/1t-cy9SRDljuzwT_gtjlSqEEpCtKyz064/preview" allow="autoplay"></iframe>
   </div>
 </div>
 
