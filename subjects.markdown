@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /subjects/
+permalink: /aiwojd281/
 title: Subjects
 banner-image-url: /assets/images/banners/subjects.jpeg
 ---
@@ -55,6 +55,66 @@ Find out more as our Josephians share their experiences in the IB programme, fro
 
 Students study 6 subjects from 6 subject groups for a strong balanced academic foundation, with 3 at Standard Level (SL) and 3 at Higher Level (HL) to recognize strengths and interests. To find our more about our exciting subjects on offer, visit [here](https://www.sji.edu.sg/programmes/academic-programmes/ib-diploma-programme/#Academic Subject content on SJI website).
 
+<!-- Temporarily Removed Links
+
+<div id="vision-mission-motto" class="flex-container">
+  {% include components/card.html
+    image_url="/assets/images/subjects/grp-1.jpeg"
+    link_url="https://drive.google.com/drive/folders/13LxGXL3BuorEN-TYmPNEzptGQx05MJwR?usp=sharing"
+    title="Group 1"
+    description="Studies in Language & Literature"
+    always_show_description=true
+    width="28vw"
+    height="20vw"
+  %}
+  {% include components/card.html
+    image_url="/assets/images/subjects/grp-2.jpeg"
+    link_url="https://drive.google.com/drive/folders/1B3K2nG54SgsgqpPkjHNnR0XMHr646cBH"
+    title="Group 2"
+    description="Language Acquisition"
+    always_show_description=true
+    width="28vw"
+    height="20vw"
+  %}
+  {% include components/card.html
+    image_url="/assets/images/subjects/grp-3.jpeg"
+    link_url="https://drive.google.com/drive/folders/104L7eKpTBxi_JELECz-n-26GwIMiuTMZ"
+    title="Group 3"
+    description="Individuals & Societies"
+    always_show_description=true
+    width="28vw"
+    height="20vw"
+  %}
+  {% include components/card.html
+    image_url="/assets/images/subjects/grp-4.jpeg"
+    link_url="https://drive.google.com/drive/folders/1CQ3RKXYa6Llcj_L2M9SGXw3F0n7SYSOD"
+    title="Group 4"
+    description="Experimental Science"
+    always_show_description=true
+    width="28vw"
+    height="20vw"
+  %}
+  {% include components/card.html
+    image_url="/assets/images/subjects/grp-5.jpeg"
+    link_url="https://drive.google.com/drive/folders/1dZIyCO7xAlgEiU6gRCIetYcxCcEgTlAd?usp=sharing"
+    title="Group 5"
+    description="Mathematics"
+    always_show_description=true
+    width="28vw"
+    height="20vw"
+  %}
+  {% include components/card.html
+    image_url="/assets/images/subjects/grp-6.jpeg"
+    link_url="https://drive.google.com/file/d/1XB_4t_Ngb3_NFF9sIVNcNKMbm5h21WYh/view?usp=drive_link"
+    title="Group 6"
+    description="The Arts"
+    always_show_description=true
+    width="28vw"
+    height="20vw"
+  %}
+</div>
+
+-->
 
 <div id="vision-mission-motto" class="flex-container">
   {% include components/card.html
