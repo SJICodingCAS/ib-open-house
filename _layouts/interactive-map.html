@@ -479,29 +479,30 @@
                 iconAnchor: [15, 42],
                 popupAnchor: [0, -42]
             }),
+            'toilet': L.icon({
+                iconUrl: '../assets/images/interactive-map/markers/toilet.png',
+                iconSize: [30, 42],
+                iconAnchor: [15, 42],
+                popupAnchor: [0, -42]
+            })
         };
 
         const floor1MarkersLayer = L.layerGroup();
         const floor2MarkersLayer = L.layerGroup();
 
         const floor1Markers = [
-            { name: "Classroom 1", coords: [500, 800], type: 'class' },
-            { name: "Games Area 1", coords: [1000, 1000], type: 'games' },
-            { name: "Food Court 1", coords: [750, 300], type: 'food' },
-            { name: "Female Toilet 1", coords: [300, 500], type: 'female-toilet' },
-            { name: "Male Toilet 1", coords: [400, 600], type: 'male-toilet' },
-            { name: "Information Desk 1", coords: [850, 700], type: 'info' },
-            { name: "Performance Stage 1", coords: [950, 850], type: 'performances' }
+            { name: "Restroom", coords: [2885-2333, 2746], type: 'toilet' }, /* use pixspy to find pixel location and plug in [image-height - y,x]*/
+            { name: "Female restroom", coords: [2885-2020, 2746], type: 'female-toilet' },
+            { name: "School tour registration", coords: [2885-2087, 2195], type: 'info' },
         ];
 
         const floor2Markers = [
-            { name: "Classroom 2", coords: [0, 0], type: 'class' },
-            { name: "Games Area 2", coords: [1020, 1020], type: 'games' },
-            { name: "Food Court 2", coords: [770, 320], type: 'food' },
-            { name: "Female Toilet 2", coords: [320, 520], type: 'female-toilet' },
-            { name: "Male Toilet 2", coords: [420, 620], type: 'male-toilet' },
-            { name: "Information Desk 2", coords: [870, 720], type: 'info' },
-            { name: "Performance Stage 2", coords: [970, 870], type: 'performances' }
+            { name: "Subject booths", coords: [2885-2456, 2879], type: 'class' },
+            { name: "CAS booths", coords: [2885-450, 625], type: 'info' },
+            { name: "Male restroom", coords: [2885-587, 3104], type: 'male-toilet' },
+            { name: "Restroom (Level 3)", coords: [2885-2170, 2280], type: 'toilet' },
+            { name: "InfoTalk (Level 3)", coords: [2885-2180, 2100], type: 'info' },
+            { name: "Dance & Rock-a-Cause", coords: [2885-450, 800], type: 'performances' }
         ];
 
         function addMarkers(markersArray, layerGroup) {
