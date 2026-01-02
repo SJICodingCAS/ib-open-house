@@ -7,6 +7,21 @@ banner-image-url: /assets/images/test.png
 
 The SJI IBDP Open House website was a collaborative project of the Coding and Technology CAS and the Open House ICs from the Student Council, first initiated for the 2024 Open House.
 
+## 2025-2026 Math and Coding CAS:
+- Steven Wang, President
+- Ng Zi Hao, Vice-President
+- Nithush Sathikumar, Vice-President
+- Chong Jian Hang Geoffrey, Vice-President
+- Bhaskar Revathi Krishh, 
+- Melissa Tan Marchen, Publicity
+
+---
+
+## 2025-2026 Student Council:
+- test
+
+---
+
 ## 2024-2025 Coding and Technology CAS:
 - Jack Li Murray Wigmore, Vice President, Web Team Lead
 - Kum Trakal, Vice President, Web Team Lead
