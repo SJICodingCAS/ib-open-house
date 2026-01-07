@@ -7,6 +7,9 @@ heading-data-pair:
     - heading: "Year"
       cell: 
         - "L1R5"
+    - heading: "2025"
+      cell:
+        - "6"
     - heading: "2024"
       cell: 
         - "6"
