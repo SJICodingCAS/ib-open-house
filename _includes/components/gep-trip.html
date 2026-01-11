@@ -1,9 +1,4 @@
 <style>
-  .gep-testimonial {
-    border: 2px solid #00664F;
-    padding: 10px;
-  }
-
   .carousel-container {
     display: flex;
     flex-direction: row;
@@ -65,55 +60,45 @@
 <div>
   {% assign data = site.data.gep %}
   {% for row in data %}
-    <h2>{{ row["GEP"] }}</h2>
-    <p>{{ row["write_up"] }}</p>
+    {% assign title = row["GEP"] | default: "" | strip %}
+    {% assign writeup = row["write_up"] | default: "" | strip %}
+    {% assign photos_raw = row["photos"] | default: "" | strip %}
 
-    {%- comment -%}
-    photos field format (recommended):
-    "../path/a.jpg|../path/b.jpg|../path/c.jpg"
-    {%- endcomment -%}
+    {% if title != "" %}
+      <h2>{{ title }}</h2>
+      {% if writeup != "" %}<p>{{ writeup }}</p>{% endif %}
 
-    {% assign photos_raw = row["photos"] | default: "" %}
-    {% assign photos = photos_raw | split: "|" %}
+      {% assign photos = photos_raw | split: "|" %}
+      {% assign clean_photos = "" | split: "|" %}
+      {% for p in photos %}
+        {% assign pt = p | strip %}
+        {% if pt != "" %}
+          {% assign clean_photos = clean_photos | push: pt %}
+        {% endif %}
+      {% endfor %}
 
-    {%- comment -%}
-    Build a cleaned list (trim + remove blanks).
-    {%- endcomment -%}
-    {% assign clean_photos = "" | split: "|" %}
-    {% for p in photos %}
-      {% assign pt = p | strip %}
-      {% if pt != "" %}
-        {% assign clean_photos = clean_photos | push: pt %}
+      {% if clean_photos.size > 0 %}
+        <div class="carousel-container">
+          <div class="arrow-container left-arrow" aria-label="Previous photos">
+            <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4L4 37L24 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="carousel-img-container" data-num-original="{{ clean_photos.size }}">
+            {% for p in clean_photos %}
+              <img src="{{ p | relative_url }}" class="carousel-img" alt="{{ title }} photo {{ forloop.index }}">
+            {% endfor %}
+          </div>
+
+          <div class="arrow-container right-arrow" aria-label="Next photos">
+            <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4L24 37L4 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
       {% endif %}
-    {% endfor %}
-
-    {% if clean_photos.size > 0 %}
-      <div class="carousel-container">
-        <div class="arrow-container left-arrow" aria-label="Previous photos">
-          <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 4L4 37L24 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-
-        <div class="carousel-img-container" data-num-original="{{ clean_photos.size }}">
-          {% for p in clean_photos %}
-            <img src="{{ p | relative_url }}" class="carousel-img" alt="{{ row['GEP'] }} photo {{ forloop.index }}">
-          {% endfor %}
-        </div>
-
-        <div class="arrow-container right-arrow" aria-label="Next photos">
-          <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4L24 37L4 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
     {% endif %}
-
-    <div class="gep-testimonial">
-      <h3>Hear from our students</h3>
-      <p>{{ row["testimonial_content"] }}</p>
-      <h4>{{ row["testimonial_student"] }}, 2024 Year 5 Student</h4>
-    </div>
   {% endfor %}
 </div>
 
@@ -124,12 +109,10 @@
       const carousel = cont.parentElement; // .carousel-container
       const leftArrow = carousel.querySelector(".left-arrow");
       const rightArrow = carousel.querySelector(".right-arrow");
-
       const allImgs = () => Array.from(cont.querySelectorAll(".carousel-img"));
 
-      // 0 images: nothing to do (this container wouldn't be rendered anyway)
+      // 0 or 1 image: no carousel behaviour needed
       if (originalCount <= 1) {
-        // 1 image: hide arrows
         leftArrow.classList.add("hidden");
         rightArrow.classList.add("hidden");
         cont.setAttribute("shown", "0");
@@ -168,7 +151,7 @@
 
         setShown(next, true);
 
-        // If we've just moved past the last original image, snap back to 0 after transition
+        // Snap back to 0 after reaching end of originals
         if (next === originalCount) {
           setTimeout(() => {
             setShown(0, false);
@@ -187,7 +170,7 @@
         let next = shown - 1;
 
         if (next === -1) {
-          // Jump to the cloned position (originalCount), then animate to last real item
+          // Jump to cloned position, then animate to last real item
           setShown(originalCount, false);
           next = originalCount - 1;
 
