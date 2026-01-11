@@ -1,187 +1,205 @@
 <style>
-    .gep-testimonial {
-        border: 2px solid #00664F;
-        padding: 10px
-    }
+  .gep-testimonial {
+    border: 2px solid #00664F;
+    padding: 10px;
+  }
 
-    .flex-container {
-        display: flex;
-        gap: 1vw;
-        margin: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-        overflow: hidden;
-    }
+  .carousel-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1vh 0 2vh 0;
+  }
 
-    .carousel-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin: 1vh;
-    }
+  .carousel-img-container {
+    width: 63vw;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0; /* removes extra margin between images */
+  }
 
-    .carousel-img-container {
-      width: 63vw;
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 0; /* removes extra margin between images */
-    }
-    
-    .carousel-img {
-      width: 20vw;
-      aspect-ratio: 4/3;
-      --transform-width: 21vw;
-      object-fit: cover;
-      margin: 0vw 0.5vw;
-      padding: 0;
-      transition: filter 0.5s;
-      flex-grow: 1;
-      transition: transform 0.25s ease-out;
-      border-radius: 10px;
-    }
+  .carousel-img {
+    width: 20vw;
+    aspect-ratio: 4/3;
+    --transform-width: 21vw;
+    object-fit: cover;
+    margin: 0vw 0.5vw;
+    padding: 0;
+    transition: transform 0.25s ease-out;
+    border-radius: 10px;
+  }
 
-    @media only screen and (max-width: 1250px) {
-      .carousel-img-container {
-        width: 62vw;
-      }
-      .carousel-img {
-        width: 30vw;
-        --transform-width: 31vw;
-      }
-    }
-    @media only screen and (max-width: 750px) {
-      .carousel-img-container {
-        width: 61vw;
-      }
-      .carousel-img {
-        width: 60vw;
-        --transform-width: 61vw;
-      }
-    }
+  @media only screen and (max-width: 1250px) {
+    .carousel-img-container { width: 62vw; }
+    .carousel-img { width: 30vw; --transform-width: 31vw; }
+  }
+  @media only screen and (max-width: 750px) {
+    .carousel-img-container { width: 61vw; }
+    .carousel-img { width: 60vw; --transform-width: 61vw; }
+  }
 
-    .carousel-img-container.no-transition .carousel-img {
-      transition: transform 0s;
-    }
+  .carousel-img-container.no-transition .carousel-img {
+    transition: transform 0s;
+  }
 
-    .arrow-container {
-      display:flex;
-      padding: 0;
-      margin: 5vw;
-    }
+  .arrow-container {
+    display: flex;
+    padding: 0;
+    margin: 5vw;
+    user-select: none;
+  }
 
-    .arrow-container:hover {
-      display:flex;
-      padding: 0;
-      margin: 5vw;
-      cursor: pointer;
-      filter: drop-shadow(0px 0px 5px black);
-    }
+  .arrow-container:hover {
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 5px black);
+  }
+
+  .arrow-container.hidden {
+    visibility: hidden; /* keep spacing */
+    pointer-events: none;
+    filter: none;
+  }
 </style>
 
 <div>
-    {% assign data = site.data.gep %}
-    {% for row in data%}
-        <h2>{{ row["GEP"] }}</h2>
-        <p>{{ row["write_up"] }}</p>
-          <div class="carousel-container">
+  {% assign data = site.data.gep %}
+  {% for row in data %}
+    <h2>{{ row["GEP"] }}</h2>
+    <p>{{ row["write_up"] }}</p>
 
-            <div class="arrow-container left-arrow">
-              <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 4L4 37L24 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>  
-            
-            <div class="carousel-img-container">
-              <img src="{{ row["first_pic"] | relative_url }}" class="carousel-img">
-              <img src="{{ row["second_pic"] | relative_url }}" class="carousel-img">
-              <img src="{{ row["third_pic"] | relative_url }}" class="carousel-img">
-              <img src="{{ row["fourth_pic"] | relative_url }}" class="carousel-img">
-              <img src="{{ row["fifth_pic"] | relative_url }}" class="carousel-img">
-              <img src="{{ row["sixth_pic"] | relative_url }}" class="carousel-img">
-            </div>
-            
-            <div class="arrow-container right-arrow">
-              <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4L24 37L4 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            
-            </div>
-        <div class="gep-testimonial">
-            <h3>Hear from our students</h3>
-            <p>
-                {{ row["testimonial_content"] }}
-            </p>
-            <h4>{{ row["testimonial_student"] }}, 2024 Year 5 Student</h4>
-        </div>
+    {%- comment -%}
+    photos field format (recommended):
+    "../path/a.jpg|../path/b.jpg|../path/c.jpg"
+    {%- endcomment -%}
+
+    {% assign photos_raw = row["photos"] | default: "" %}
+    {% assign photos = photos_raw | split: "|" %}
+
+    {%- comment -%}
+    Build a cleaned list (trim + remove blanks).
+    {%- endcomment -%}
+    {% assign clean_photos = "" | split: "|" %}
+    {% for p in photos %}
+      {% assign pt = p | strip %}
+      {% if pt != "" %}
+        {% assign clean_photos = clean_photos | push: pt %}
+      {% endif %}
     {% endfor %}
+
+    {% if clean_photos.size > 0 %}
+      <div class="carousel-container">
+        <div class="arrow-container left-arrow" aria-label="Previous photos">
+          <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 4L4 37L24 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="carousel-img-container" data-num-original="{{ clean_photos.size }}">
+          {% for p in clean_photos %}
+            <img src="{{ p | relative_url }}" class="carousel-img" alt="{{ row['GEP'] }} photo {{ forloop.index }}">
+          {% endfor %}
+        </div>
+
+        <div class="arrow-container right-arrow" aria-label="Next photos">
+          <svg width="14" height="37" viewBox="0 0 28 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L24 37L4 70" stroke="#00664F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="gep-testimonial">
+      <h3>Hear from our students</h3>
+      <p>{{ row["testimonial_content"] }}</p>
+      <h4>{{ row["testimonial_student"] }}, 2024 Year 5 Student</h4>
+    </div>
+  {% endfor %}
 </div>
 
 <script>
-  (() => { // run on load
+  (() => {
     document.querySelectorAll(".carousel-img-container").forEach(cont => {
-      let numImgs = cont.children.length;
-      cont.appendChild(cont.children[0].cloneNode());
-      cont.appendChild(cont.children[1].cloneNode());
-      cont.appendChild(cont.children[2].cloneNode());
+      const originalCount = parseInt(cont.dataset.numOriginal || cont.children.length, 10);
+      const carousel = cont.parentElement; // .carousel-container
+      const leftArrow = carousel.querySelector(".left-arrow");
+      const rightArrow = carousel.querySelector(".right-arrow");
 
-      // attribute "shown" stores the index of the leftmost image
+      const allImgs = () => Array.from(cont.querySelectorAll(".carousel-img"));
+
+      // 0 images: nothing to do (this container wouldn't be rendered anyway)
+      if (originalCount <= 1) {
+        // 1 image: hide arrows
+        leftArrow.classList.add("hidden");
+        rightArrow.classList.add("hidden");
+        cont.setAttribute("shown", "0");
+        return;
+      }
+
+      // Clone k images for smooth looping; k = min(3, originalCount)
+      const k = Math.min(3, originalCount);
+      for (let i = 0; i < k; i++) {
+        cont.appendChild(cont.children[i].cloneNode(true));
+      }
+
       cont.setAttribute("shown", "0");
-      // attribute "scrolling" disables the arrows while it is scrolling
 
-      // when right arrow is clicked, scroll to the right
-      let rightArrow = cont.parentElement.querySelector(".right-arrow");
+      function setShown(shown, withTransition = true) {
+        if (!withTransition) cont.classList.add("no-transition");
+
+        allImgs().forEach(img => {
+          img.style.transform = `translateX(calc(var(--transform-width) * -${shown}))`;
+        });
+
+        if (!withTransition) {
+          void cont.offsetHeight; // reflow
+          cont.classList.remove("no-transition");
+        }
+
+        cont.setAttribute("shown", String(shown));
+      }
+
       rightArrow.addEventListener("click", () => {
         if (cont.hasAttribute("scrolling")) return;
-        cont.setAttribute("scrolling", "1")
+        cont.setAttribute("scrolling", "1");
 
-        let newShown = parseInt(cont.getAttribute("shown")) + 1;
-        cont.querySelectorAll(".carousel-img").forEach(a => {
-          a.style.transform = `translateX(calc(var(--transform-width) * -${newShown}))`
-        })
-        if (newShown == numImgs) {
-          newShown = 0
+        let shown = parseInt(cont.getAttribute("shown"), 10);
+        let next = shown + 1;
+
+        setShown(next, true);
+
+        // If we've just moved past the last original image, snap back to 0 after transition
+        if (next === originalCount) {
           setTimeout(() => {
-            cont.classList.add("no-transition");
-            cont.querySelectorAll(".carousel-img").forEach(a => {
-                a.style.transform = ""
-              })
-            setTimeout(() => {
-              cont.classList.remove("no-transition");
-              cont.removeAttribute("scrolling")
-            }, 10)
-          }, 290)
+            setShown(0, false);
+            cont.removeAttribute("scrolling");
+          }, 290);
         } else {
-          setTimeout(() => {
-            cont.removeAttribute("scrolling")
-          }, 290)
+          setTimeout(() => cont.removeAttribute("scrolling"), 290);
         }
-        cont.setAttribute("shown", newShown.toString());
-      })
-      // when right arrow is clicked, scroll to the right
-      let leftArrow = cont.parentElement.querySelector(".left-arrow");
+      });
+
       leftArrow.addEventListener("click", () => {
         if (cont.hasAttribute("scrolling")) return;
-        cont.setAttribute("scrolling", "1")
+        cont.setAttribute("scrolling", "1");
 
-        let newShown = parseInt(cont.getAttribute("shown")) - 1;
-        if (newShown == -1) {
-          newShown = numImgs - 1
-          cont.classList.add("no-transition");
-          cont.querySelectorAll(".carousel-img").forEach(a => {
-            a.style.transform = `translateX(calc(var(--transform-width) * -${newShown + 1}))`
-          })
+        let shown = parseInt(cont.getAttribute("shown"), 10);
+        let next = shown - 1;
+
+        if (next === -1) {
+          // Jump to the cloned position (originalCount), then animate to last real item
+          setShown(originalCount, false);
+          next = originalCount - 1;
+
+          setTimeout(() => {
+            setShown(next, true);
+            cont.removeAttribute("scrolling");
+          }, 10);
+        } else {
+          setShown(next, true);
+          setTimeout(() => cont.removeAttribute("scrolling"), 290);
         }
-        setTimeout(() => {
-          cont.classList.remove("no-transition");
-          cont.querySelectorAll(".carousel-img").forEach(a => {
-            a.style.transform = `translateX(calc(var(--transform-width) * -${newShown}))`
-          })
-          cont.setAttribute("shown", newShown.toString());
-          cont.removeAttribute("scrolling")
-        }, 10)
-      })
+      });
     });
-  })()
+  })();
 </script>
