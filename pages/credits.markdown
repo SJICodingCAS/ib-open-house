@@ -12,7 +12,7 @@ The SJI IBDP Open House website was a collaborative project of the Coding and Te
 - Ng Zi Hao, Vice-President
 - Nithush Sathikumar, Vice-President
 - Chong Jian Hang Geoffrey, Vice-President
-- Bhaskar Revathi Krishh, 
+- Bhaskar Revathi Krishh, Partnerships
 - Melissa Tan Marchen, Publicity
 
 ---
