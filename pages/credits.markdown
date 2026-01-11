@@ -8,7 +8,7 @@ banner-image-url: /assets/images/test.png
 The SJI IBDP Open House website was a collaborative project of the Coding and Technology CAS and the Open House ICs from the Student Council, first initiated for the 2024 Open House.
 
 ## 2025-2026 Math and Coding CAS:
-- Steven Wang, President
+- Steven Wang, President, Web Lead
 - Ng Zi Hao, Vice-President
 - Nithush Sathikumar, Vice-President
 - Chong Jian Hang Geoffrey, Vice-President
@@ -18,7 +18,12 @@ The SJI IBDP Open House website was a collaborative project of the Coding and Te
 ---
 
 ## 2025-2026 Student Council:
-- test
+- Putt Sawasmongkol, President
+- Ariel Aiman Bin Noorisman, Vice-President
+- Erica Seah Jue Jia, Vice-President
+- Chloe Ng Huang Leqi, Service IC
+- Zachary Yan Tjun, Faith IC
+- Elijah Lee Zhi En, Community IC
 
 ---
 
